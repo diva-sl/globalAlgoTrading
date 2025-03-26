@@ -23,14 +23,22 @@ export default function RootLayout({ children, metadata = defaultMetadata }) {
           type="text/css"
           href="/assets/css/style6572.css"
         />
-        <link href="/images/fav.png" type="img/x-icon" rel="shortcut icon" />
+        <link
+          rel="icon"
+          href="/images/elite_icon.png"
+          type="image/png"
+          sizes="32x32"
+        />
         <meta
           name="google-site-verification"
           content="DAG0zrPA2NMfIdfK6lMRhL_5AZDx0EoK9D8u2gC2fVc"
         />
 
         {/* Google Analytics */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-6CDQ7GTGL8"></script>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-6CDQ7GTGL8"
+        ></script>
         <script
           dangerouslySetInnerHTML={{
             __html: `

@@ -10,8 +10,8 @@ export default function About() {
     title: "ABOUT US - Elite Algo Trading",
     description:
       "Discover Elite Algo Tradings innovation in AI & algorithmic trading. Empowering traders with advanced solutions for stocks, cryptocurrencies, and commodities.",
-  canonical: "https://algotradingelite.com//about"
-    };
+    canonical: "https://algotradingelite.com//about",
+  };
   return (
     <RootLayout metadata={metaData}>
       <main>
@@ -53,12 +53,26 @@ export default function About() {
                       <div className="col-lg-6">
                         <div className="block-text pe-xxl-7">
                           <p className="lead">
-                          Welcome to Elite Trading – Where innovation meets precision in the world of algorithmic trading. We are a cutting-edge financial technology firm dedicated to providing institutional-grade trading strategies powered by advanced algorithms and artificial intelligence. At Elite Trading, we leverage the latest in quantitative analysis, machine learning, and high-frequency trading to offer our clients an edge in today's competitive markets.
-
+                            Welcome to Elite Trading – Where innovation meets
+                            precision in the world of algorithmic trading. We
+                            are a cutting-edge financial technology firm
+                            dedicated to providing institutional-grade trading
+                            strategies powered by advanced algorithms and
+                            artificial intelligence. At Elite Trading, we
+                            leverage the latest in quantitative analysis,
+                            machine learning, and high-frequency trading to
+                            offer our clients an edge in today's competitive
+                            markets.
                           </p>
                           <p className="lead">
-                          Founded by a team of seasoned traders, data scientists, and financial engineers, we are committed to developing intelligent, efficient, and adaptive trading solutions. Our mission is to bring professional-level trading strategies to both institutional and retail traders, creating opportunities for significant growth and sustainable success.
-
+                            Founded by a team of seasoned traders, data
+                            scientists, and financial engineers, we are
+                            committed to developing intelligent, efficient, and
+                            adaptive trading solutions. Our mission is to bring
+                            professional-level trading strategies to both
+                            institutional and retail traders, creating
+                            opportunities for significant growth and sustainable
+                            success.
                           </p>
                           {/* <ul className="list gy-3 pe-xxl-7">
                             <li>
@@ -125,7 +139,9 @@ export default function About() {
                                   Strategic Market Intelligence
                                 </h3>
                                 <p>
-                                Get comprehensive market trend analysis, behavior insights, and economic indicators to make informed trading decisions. 
+                                  Get comprehensive market trend analysis,
+                                  behavior insights, and economic indicators to
+                                  make informed trading decisions.
                                 </p>
                               </div>
                             </div>
@@ -147,7 +163,9 @@ export default function About() {
                               <div className="feature-text text-base">
                                 <h3 className="title">Organized Trading</h3>
                                 <p>
-                                Experience a streamlined and efficient trading process with our well-structured platform for smooth trading operations. 
+                                  Experience a streamlined and efficient trading
+                                  process with our well-structured platform for
+                                  smooth trading operations.
                                 </p>
                               </div>
                             </div>
@@ -172,7 +190,10 @@ export default function About() {
                                   Expert Investment Direction
                                 </h3>
                                 <p>
-                                Benefit from expert guidance and strategic advice to maximize your investment potential with personalized investment strategies while minimizing risks. 
+                                  Benefit from expert guidance and strategic
+                                  advice to maximize your investment potential
+                                  with personalized investment strategies while
+                                  minimizing risks.
                                 </p>
                               </div>
                             </div>
@@ -197,7 +218,9 @@ export default function About() {
                                   Transform Sentiment into Success
                                 </h3>
                                 <p>
-                                Convert market sentiment into profitable trading opportunities with our advanced tools to grasp every profitable opportunity. 
+                                  Convert market sentiment into profitable
+                                  trading opportunities with our advanced tools
+                                  to grasp every profitable opportunity.
                                 </p>
                               </div>
                             </div>
@@ -223,7 +246,10 @@ export default function About() {
                                 </h3>
                                 <p>
                                   {" "}
-                                  Achieve superior results with our advanced algorithms and automated trading solutions for performance optimizations and desirable results.
+                                  Achieve superior results with our advanced
+                                  algorithms and automated trading solutions for
+                                  performance optimizations and desirable
+                                  results.
                                 </p>
                               </div>
                             </div>
@@ -248,7 +274,10 @@ export default function About() {
                                   Unified AI Assimilation
                                 </h3>
                                 <p>
-                                Find the best artificial intelligence trading integrated system into your trading strategies to make uniformed decisions for making profit with AI driven real-time insights. 
+                                  Find the best artificial intelligence trading
+                                  integrated system into your trading strategies
+                                  to make uniformed decisions for making profit
+                                  with AI driven real-time insights.
                                 </p>
                               </div>
                             </div>
@@ -272,7 +301,7 @@ export default function About() {
                       </div>
                     </div>
                   </div>
-                  <div className="section-content">
+                  {/* <div className="section-content">
                     <div className="row g-gs justify-content-center align-items-center">
                       <div className="col-lg-4">
                         <div className="card border-0 shadow-tiny rounded-4">
@@ -347,12 +376,12 @@ export default function About() {
                               has been unparalleled. Their platform offers a
                               seamless trading experience, equipped with
                               advanced features and intuitive interface that
-                              streamlines my trading activities.
-                              {/* With Elite Algo Trading, I've seen a significant
+                              streamlines my trading activities. */}
+                  {/* With Elite Algo Trading, I've seen a significant
                         improvement in my trading performance and efficiency. I
                         highly recommend Elite Algo Trading to any trader looking for a
                         reliable and innovative trading software solution." */}
-                            </p>
+                  {/* </p>
                             <div className="d-flex pt-3">
                               <div className="media media-lg media-middle media-lg rounded-pill">
                                 <img src="/images/img2.png" alt="" />
@@ -387,23 +416,23 @@ export default function About() {
                               <li>
                                 <em className="icon text-warning ni ni-star-fill fs-5" />
                               </li>
-                            </ul>
-                            {/* <h4 className="title mb-3">
+                            </ul> */}
+                  {/* <h4 className="title mb-3">
               Just wanna shout out the whole team for this amazing tool
             </h4> */}
-                            <p>
+                  {/* <p>
                               Having been a seasoned trader for over 15 years,
                               I've encountered numerous trading software
                               solutions. However, my experience with Elite Algo Trading
                               has been unparalleled. Their platform offers a
                               seamless trading experience, equipped with
                               advanced features and intuitive interface that
-                              streamlines my trading activities.
-                              {/* With Elite Algo Trading, I've seen a significant
+                              streamlines my trading activities. */}
+                  {/* With Elite Algo Trading, I've seen a significant
                         improvement in my trading performance and efficiency. I
                         highly recommend Elite Algo Trading to any trader looking for a
                         reliable and innovative trading software solution */}
-                            </p>
+                  {/* </p>
                             <div className="d-flex pt-3">
                               <div className="media media-lg media-middle media-lg rounded-pill">
                                 <img src="/images/img1.png" alt="" />
@@ -420,11 +449,9 @@ export default function About() {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </section>
-
- 
             </main>
           </div>
         </Layout>

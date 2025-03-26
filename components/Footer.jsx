@@ -1,10 +1,13 @@
-import Link from 'next/link';
-import React from 'react';
-import { FaWhatsapp, FaInstagram, FaFacebook } from 'react-icons/fa';
+import Link from "next/link";
+import React from "react";
+import { FaWhatsapp, FaInstagram, FaFacebook } from "react-icons/fa";
 
 function Footer() {
   return (
-    <footer className="nk-footer pt-4 pt-lg-7 text-white" style={{ background: 'gray' }}>
+    <footer
+      className="nk-footer pt-4 pt-lg-7 text-white"
+      style={{ background: "#121212" }}
+    >
       <div className="section section-top-0">
         <div className="container">
           <div className="row g-5">
@@ -15,23 +18,27 @@ function Footer() {
                     className="logo-img"
                     src="/images/logo.png"
                     alt="Elite Algo Trading"
-                    style={{ width: '200px' }}
+                    style={{ width: "200px" }}
                   />
                 </Link>
                 <p className="text-" style={{ marginTop: 20 }}>
-                  Algo trading we offer cutting-edge algorithmic trading solutions designed to empower
-                  investors with advanced tools and strategies to navigate today’s dynamic financial markets.
-                  Our AlgoTrading Service combines state-of-the-art technology with expert financial analysis
-                  to deliver superior results for our clients.
+                  Algo trading we offer cutting-edge algorithmic trading
+                  solutions designed to empower investors with advanced tools
+                  and strategies to navigate today’s dynamic financial markets.
+                  Our AlgoTrading Service combines state-of-the-art technology
+                  with expert financial analysis to deliver superior results for
+                  our clients.
                 </p>
-                <h4 className="wgs-title overline-title text-white mt-5">Follow Us</h4>
+                <h4 className="wgs-title overline-title text-white mt-5">
+                  Follow Us
+                </h4>
                 <div className="mt-2 footer-social">
                   <ul className="btn-list btn-list-inline g-1 justify-content-start">
                     <li>
                       <Link
                         className=""
-                        style={{color:'green'}}
-                        href="https://wa.me/918088566821"
+                        style={{ color: "white" }}
+                        href="https://wa.me/919900936011"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -40,10 +47,9 @@ function Footer() {
                     </li>
                     <li>
                       <Link
-                        className=" text-pink"
-                        style={{color:'#C13584'}}
-
-                        href="https://www.instagram.com/"
+                        className=" text-white"
+                        style={{ color: "#C13584" }}
+                        href="https://www.instagram.com/algotradingelite?igsh=NmpyMWUxbHltNzlk"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -52,8 +58,8 @@ function Footer() {
                     </li>
                     <li>
                       <Link
-                        className=" text-primary"
-                        href="https://www.facebook.com/"
+                        className=" text-white"
+                        href="https://www.facebook.com/share/1XE6niM7pj/"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -66,7 +72,10 @@ function Footer() {
             </div>
             <div className="col-xl-2 col-lg-2 col-sm-4 col-6">
               <div className="wgs">
-                <h4 className="wgs-title overline-title mb-3" style={{ color: 'white' }}>
+                <h4
+                  className="wgs-title overline-title mb-3"
+                  style={{ color: "white" }}
+                >
                   Company
                 </h4>
                 <ul className="list gy-2 list-link-base">
@@ -105,22 +114,28 @@ function Footer() {
             </div>
             <div className="col-xl-4 col-lg-4 col-sm-4">
               <div className="wgs">
-                <h4 className="wgs-title overline-title text-white mb-3">Contacts</h4>
+                <h4 className="wgs-title overline-title text-white mb-3">
+                  Contacts
+                </h4>
                 <p>
                   <span className="font-bold">Address :</span>
                   <br />
-                  Kirloskar Business Park, Hebbal Kempapura, Hebbal Bengaluru Karnataka 560024
+                  Sy-No.37, Tech 37, Plot Number 2A, Hosur Rd, 2nd Phase,
+                  Electronic City, Bengaluru, Karnataka 560100
                 </p>
                 <p>
                   <span className="font-bold">Email Id :</span>
-                  <Link href="mailto:support@algotradingelite.com" className="link link-info">
+                  <Link
+                    href="mailto:support@algotradingelite.com"
+                    className="link link-info"
+                  >
                     support@algotradingelite.com
                   </Link>
                 </p>
                 <p>
                   <span className="font-bold">Phone :</span>
-                  <Link href="tel:8088566821" className="link link-info">
-                    +91 8088566821
+                  <Link href="tel:9900936011" className="link link-info">
+                    +91 9900936011
                   </Link>
                 </p>
               </div>
@@ -134,7 +149,9 @@ function Footer() {
           <div className="row">
             <div className="col-md text-center">
               <p className="mb-2 mb-md-0">
-                Copyright © 2024 <span className="text-info-1">Elite Algo Trading</span>. All rights reserved.
+                Copyright © 2024{" "}
+                <span className="text-info-1">Elite Algo Trading</span>. All
+                rights reserved.
               </p>
             </div>
           </div>

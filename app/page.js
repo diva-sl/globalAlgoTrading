@@ -46,7 +46,7 @@ export default function Home() {
         "Algo trading offers several advantages including increased speed and efficiency in executing trades, the ability to process vast amounts of data in real-time, the elimination of human emotions from trading decisions, and the potential for better risk management and improved trading performance.",
     },
   ];
-  
+
   const faqContentRight = [
     {
       question: "Is Algo trading suitable for beginners?",
@@ -64,7 +64,6 @@ export default function Home() {
         "Yes, many Algo trading platforms allow users to customize parameters such as risk tolerance, position sizing, trading frequency, and specific trading rules to align with their individual preferences and investment goals.",
     },
   ];
-  
 
   const text = "uns in all Market";
   const period = 100;
@@ -370,15 +369,22 @@ export default function Home() {
                         className="title- mb-3 mb-lg-4 display-5"
                         style={{ color: "#55b59e" }}
                       >
-                    Revolutionize Your Trading with 
+                        Revolutionize Your Trading with
                         <br />
                         <span className="text-gradient-primary">
-                        Elite Automation
+                          Elite Automation
                         </span>
                       </h1>
                       <p className="color-text">
-                      Elevate your Forex trading in India with the power of AI and algorithmic strategies from Elitetrading Algo. Our innovative platform is designed to optimize your trading tactics and enhance market outcomes. Recognized with multiple awards for excellence in both futures and forex trading, we provide you with cutting-edge tools to drive consistent business growth. Join Elite Algo Trading today and take your trading experience to new heights of success.
-
+                        Elevate your Forex trading in India with the power of AI
+                        and algorithmic strategies from Elitetrading Algo. Our
+                        innovative platform is designed to optimize your trading
+                        tactics and enhance market outcomes. Recognized with
+                        multiple awards for excellence in both futures and forex
+                        trading, we provide you with cutting-edge tools to drive
+                        consistent business growth. Join Elite Algo Trading
+                        today and take your trading experience to new heights of
+                        success.
                       </p>
                     </div>
                   </div>
@@ -473,8 +479,8 @@ export default function Home() {
                                 Delivering Premium Trading Software
                               </h4>
                               <p>
-                                Elite Algo Trading is the best algo trading app in
-                                India, where we deliver advanced trading
+                                Elite Algo Trading is the best algo trading app
+                                in India, where we deliver advanced trading
                                 software that is designed to help you trade
                                 smarter and stay profitable. Our platform offers
                                 the most advanced tools and features, coupled
@@ -506,123 +512,130 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="section-content">
-  <div className="row text-center g-gs">
-    <div className="col-md-6 col-xl-4" data-aos="fade-up">
-      <a
-        href="usecase-details.html"
-        className="card card-hover-translate rounded-4 border-0 shadow-tiny h-100"
-      >
-        <div className="card-body">
-          <div className="feature">
-            <div className="feature-media">
-              <div className="media media-middle media-xl text-bg-success-soft rounded-pill">
-                <em className="icon ni ni-globe" />
-              </div>
-            </div>
-            <div className="feature-text text-base">
-              <h3 className="title">Custom Algorithmic Strategies</h3>
-              <p>
-                Tailored to suit your trading goals, our expert team helps develop
-                customized strategies to align with your risk profile and investment
-                targets.
-              </p>
-            </div>
-          </div>
-        </div>
-      </a>
-    </div>
+                  <div className="row text-center g-gs">
+                    <div className="col-md-6 col-xl-4" data-aos="fade-up">
+                      <a
+                        href="usecase-details.html"
+                        className="card card-hover-translate rounded-4 border-0 shadow-tiny h-100"
+                      >
+                        <div className="card-body">
+                          <div className="feature">
+                            <div className="feature-media">
+                              <div className="media media-middle media-xl text-bg-success-soft rounded-pill">
+                                <em className="icon ni ni-globe" />
+                              </div>
+                            </div>
+                            <div className="feature-text text-base">
+                              <h3 className="title">
+                                Custom Algorithmic Strategies
+                              </h3>
+                              <p>
+                                Tailored to suit your trading goals, our expert
+                                team helps develop customized strategies to
+                                align with your risk profile and investment
+                                targets.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
 
-    <div
-      className="col-md-6 col-xl-4"
-      data-aos="fade-up"
-      data-aos-delay="100"
-    >
-      <a
-        href="usecase-details.html"
-        className="card card-hover-translate rounded-4 border-0 shadow-tiny h-100"
-      >
-        <div className="card-body">
-          <div className="feature">
-            <div className="feature-media">
-              <div className="media media-middle media-xl text-bg-info-soft rounded-pill">
-                <em className="icon ni ni-flag" />
-              </div>
-            </div>
-            <div className="feature-text text-base">
-              <h3 className="title">Automated Trade Execution</h3>
-              <p>
-                Seamlessly execute trades without manual intervention. Our algorithms
-                work faster than human traders, ensuring you can capitalize on market
-                opportunities instantly.
-              </p>
-            </div>
-          </div>
-        </div>
-      </a>
-    </div>
+                    <div
+                      className="col-md-6 col-xl-4"
+                      data-aos="fade-up"
+                      data-aos-delay="100"
+                    >
+                      <a
+                        href="usecase-details.html"
+                        className="card card-hover-translate rounded-4 border-0 shadow-tiny h-100"
+                      >
+                        <div className="card-body">
+                          <div className="feature">
+                            <div className="feature-media">
+                              <div className="media media-middle media-xl text-bg-info-soft rounded-pill">
+                                <em className="icon ni ni-flag" />
+                              </div>
+                            </div>
+                            <div className="feature-text text-base">
+                              <h3 className="title">
+                                Automated Trade Execution
+                              </h3>
+                              <p>
+                                Seamlessly execute trades without manual
+                                intervention. Our algorithms work faster than
+                                human traders, ensuring you can capitalize on
+                                market opportunities instantly.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
 
-    <div
-      className="col-md-6 col-xl-4"
-      data-aos="fade-up"
-      data-aos-delay="200"
-    >
-      <a
-        href="usecase-details.html"
-        className="card card-hover-translate rounded-4 border-0 shadow-tiny h-100"
-      >
-        <div className="card-body">
-          <div className="feature">
-            <div className="feature-media">
-              <div className="media media-middle media-xl text-bg-primary-soft rounded-pill">
-                <em className="icon ni ni-edit" />
-              </div>
-            </div>
-            <div className="feature-text text-base">
-              <h3 className="title">
-                Performance Analytics and Optimization
-              </h3>
-              <p>
-                Track, analyze, and optimize your trading strategies. Our platform
-                provides in-depth performance reports, allowing you to adjust your
-                tactics for continuous improvement.
-              </p>
-            </div>
-          </div>
-        </div>
-      </a>
-    </div>
+                    <div
+                      className="col-md-6 col-xl-4"
+                      data-aos="fade-up"
+                      data-aos-delay="200"
+                    >
+                      <a
+                        href="usecase-details.html"
+                        className="card card-hover-translate rounded-4 border-0 shadow-tiny h-100"
+                      >
+                        <div className="card-body">
+                          <div className="feature">
+                            <div className="feature-media">
+                              <div className="media media-middle media-xl text-bg-primary-soft rounded-pill">
+                                <em className="icon ni ni-edit" />
+                              </div>
+                            </div>
+                            <div className="feature-text text-base">
+                              <h3 className="title">
+                                Performance Analytics and Optimization
+                              </h3>
+                              <p>
+                                Track, analyze, and optimize your trading
+                                strategies. Our platform provides in-depth
+                                performance reports, allowing you to adjust your
+                                tactics for continuous improvement.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
 
-    <div
-      className="col-md-6 col-xl-4"
-      data-aos="fade-up"
-      data-aos-delay="300"
-    >
-      <a
-        href="usecase-details.html"
-        className="card card-hover-translate rounded-4 border-0 shadow-tiny h-100"
-      >
-        <div className="card-body">
-          <div className="feature">
-            <div className="feature-media">
-              <div className="media media-middle media-xl text-bg-purple-soft rounded-pill">
-                <em className="icon ni ni-percent" />
-              </div>
-            </div>
-            <div className="feature-text text-base">
-              <h3 className="title">Risk Management Tools</h3>
-              <p>
-                Built-in risk management features allow you to control your trading
-                exposure with tools like automated stop-loss orders, take-profit
-                strategies, and more.
-              </p>
-            </div>
-          </div>
-        </div>
-      </a>
-    </div>
-  </div>
-</div>
-
+                    <div
+                      className="col-md-6 col-xl-4"
+                      data-aos="fade-up"
+                      data-aos-delay="300"
+                    >
+                      <a
+                        href="usecase-details.html"
+                        className="card card-hover-translate rounded-4 border-0 shadow-tiny h-100"
+                      >
+                        <div className="card-body">
+                          <div className="feature">
+                            <div className="feature-media">
+                              <div className="media media-middle media-xl text-bg-purple-soft rounded-pill">
+                                <em className="icon ni ni-percent" />
+                              </div>
+                            </div>
+                            <div className="feature-text text-base">
+                              <h3 className="title">Risk Management Tools</h3>
+                              <p>
+                                Built-in risk management features allow you to
+                                control your trading exposure with tools like
+                                automated stop-loss orders, take-profit
+                                strategies, and more.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </section>
 
@@ -655,7 +668,9 @@ export default function Home() {
                           Currency software
                         </h5>
                         <p className="card-text">
-                        Gain the edge in currency trading with our state-of-the-art software, designed for smart, swift, and strategic trading.
+                          Gain the edge in currency trading with our
+                          state-of-the-art software, designed for smart, swift,
+                          and strategic trading.
                         </p>
                       </div>
                     </div>
@@ -680,10 +695,12 @@ export default function Home() {
                           Cryptography software
                         </h5>
                         <p className="card-text">
-                        Seize the future of finance with our innovative crypto trading software, designed for seamless transactions and real-time market insights."
-Indian Market Trading Software
-Empower your trading with our intuitive software—where data meets opportunity in the Indian market."
-
+                          Seize the future of finance with our innovative crypto
+                          trading software, designed for seamless transactions
+                          and real-time market insights." Indian Market Trading
+                          Software Empower your trading with our intuitive
+                          software—where data meets opportunity in the Indian
+                          market."
                         </p>
                       </div>
                     </div>
@@ -708,8 +725,10 @@ Empower your trading with our intuitive software—where data meets opportunity 
                           Indian market software
                         </h5>
                         <p className="card-text">
-                        Unlock the power of automated trading with advanced algorithms tailored for the Indian market.
-                         Maximize your profits and minimize risks with cutting-edge solutions designed for smarter, faster trades."
+                          Unlock the power of automated trading with advanced
+                          algorithms tailored for the Indian market. Maximize
+                          your profits and minimize risks with cutting-edge
+                          solutions designed for smarter, faster trades."
                         </p>
                       </div>
                     </div>
@@ -734,10 +753,9 @@ Empower your trading with our intuitive software—where data meets opportunity 
                           Commodity software
                         </h5>
                         <p className="card-text">
-                        
-Transform your trading strategy with our advanced forex commodity software,
- engineered for precision and insight in the COMMODITIES market.
-
+                          Transform your trading strategy with our advanced
+                          forex commodity software, engineered for precision and
+                          insight in the COMMODITIES market.
                         </p>
                       </div>
                     </div>
@@ -790,116 +808,130 @@ Transform your trading strategy with our advanced forex commodity software,
                   Why Choose Your Company Elite Algo Trading AlgoTrading
                 </h4>
                 <div className="section-content">
-  <div
-    className="row g-gs"
-    style={{
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-    }}
-  >
-    <div className="col-lg-5" data-aos="fade-right">
-      <div className="card bg-gradient-light border-0 h-100">
-        <div className="card-body p-3 d-flex">
-          <div className="feature feature-inline align-items-center">
-            <div className="feature-text me-auto">
-              <h4 className="title">Precision and Accuracy</h4>
-              <p>
-                Algo trading uses advanced algorithms to execute trades with
-                pinpoint accuracy, ensuring you never miss an opportunity in the
-                fast-paced market.
-              </p>
-            </div>
-            <div className="feature-decoration flex-shrink-0">
-              <img src="assets/images/1.png" alt="precision-icon" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+                  <div
+                    className="row g-gs"
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <div className="col-lg-5" data-aos="fade-right">
+                      <div className="card bg-gradient-light border-0 h-100">
+                        <div className="card-body p-3 d-flex">
+                          <div className="feature feature-inline align-items-center">
+                            <div className="feature-text me-auto">
+                              <h4 className="title">Precision and Accuracy</h4>
+                              <p>
+                                Algo trading uses advanced algorithms to execute
+                                trades with pinpoint accuracy, ensuring you
+                                never miss an opportunity in the fast-paced
+                                market.
+                              </p>
+                            </div>
+                            <div className="feature-decoration flex-shrink-0">
+                              <img
+                                src="assets/images/1.png"
+                                alt="precision-icon"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
 
-    <div className="col-lg-5" data-aos="fade-left">
-      <div className="card bg-gradient-light border-0 h-100">
-        <div className="card-body p-3 d-flex">
-          <div className="feature feature-inline align-items-center">
-            <div className="feature-text me-auto">
-              <h4 className="title">24/7 Trading Capability</h4>
-              <p>
-                Automated systems work round-the-clock, allowing you to
-                capitalize on market movements even when you're offline.
-              </p>
-            </div>
-            <div className="feature-decoration flex-shrink-0">
-              <img src="assets/images/1.png" alt="trading-icon" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+                    <div className="col-lg-5" data-aos="fade-left">
+                      <div className="card bg-gradient-light border-0 h-100">
+                        <div className="card-body p-3 d-flex">
+                          <div className="feature feature-inline align-items-center">
+                            <div className="feature-text me-auto">
+                              <h4 className="title">24/7 Trading Capability</h4>
+                              <p>
+                                Automated systems work round-the-clock, allowing
+                                you to capitalize on market movements even when
+                                you're offline.
+                              </p>
+                            </div>
+                            <div className="feature-decoration flex-shrink-0">
+                              <img
+                                src="assets/images/1.png"
+                                alt="trading-icon"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
 
-    <div className="col-lg-5" data-aos="fade-right">
-      <div className="card bg-gradient-light border-0 h-100">
-        <div className="card-body p-3 d-flex">
-          <div className="feature feature-inline align-items-center">
-            <div className="feature-text me-auto">
-              <h4 className="title">Risk Management</h4>
-              <p>
-                Our algorithms incorporate risk management strategies, such as
-                stop-loss and take-profit levels, minimizing potential losses
-                while maximizing gains.
-              </p>
-            </div>
-            <div className="feature-decoration flex-shrink-0">
-              <img src="assets/images/1.png" alt="risk-icon" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+                    <div className="col-lg-5" data-aos="fade-right">
+                      <div className="card bg-gradient-light border-0 h-100">
+                        <div className="card-body p-3 d-flex">
+                          <div className="feature feature-inline align-items-center">
+                            <div className="feature-text me-auto">
+                              <h4 className="title">Risk Management</h4>
+                              <p>
+                                Our algorithms incorporate risk management
+                                strategies, such as stop-loss and take-profit
+                                levels, minimizing potential losses while
+                                maximizing gains.
+                              </p>
+                            </div>
+                            <div className="feature-decoration flex-shrink-0">
+                              <img src="assets/images/1.png" alt="risk-icon" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
 
-    <div className="col-lg-5" data-aos="fade-left">
-      <div className="card bg-gradient-light border-0 h-100">
-        <div className="card-body p-3 d-flex">
-          <div className="feature feature-inline align-items-center">
-            <div className="feature-text me-auto">
-              <h4 className="title">Emotion-Free Trading</h4>
-              <p>
-                Eliminate emotional decision-making. Algorithms follow a set
-                strategy without being influenced by market sentiment, leading
-                to more consistent and objective results.
-              </p>
-            </div>
-            <div className="feature-decoration flex-shrink-0">
-              <img src="assets/images/1.png" alt="emotion-free-icon" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+                    <div className="col-lg-5" data-aos="fade-left">
+                      <div className="card bg-gradient-light border-0 h-100">
+                        <div className="card-body p-3 d-flex">
+                          <div className="feature feature-inline align-items-center">
+                            <div className="feature-text me-auto">
+                              <h4 className="title">Emotion-Free Trading</h4>
+                              <p>
+                                Eliminate emotional decision-making. Algorithms
+                                follow a set strategy without being influenced
+                                by market sentiment, leading to more consistent
+                                and objective results.
+                              </p>
+                            </div>
+                            <div className="feature-decoration flex-shrink-0">
+                              <img
+                                src="assets/images/1.png"
+                                alt="emotion-free-icon"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
 
-    <div className="col-lg-5" data-aos="fade-right">
-      <div className="card bg-gradient-light border-0 h-100">
-        <div className="card-body p-3 d-flex">
-          <div className="feature feature-inline align-items-center">
-            <div className="feature-text me-auto">
-              <h4 className="title">Backtested Strategies</h4>
-              <p>
-                Our systems use historical data to test strategies before
-                implementation, ensuring they are optimized for market
-                conditions.
-              </p>
-            </div>
-            <div className="feature-decoration flex-shrink-0">
-              <img src="assets/images/1.png" alt="backtest-icon" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
+                    <div className="col-lg-5" data-aos="fade-right">
+                      <div className="card bg-gradient-light border-0 h-100">
+                        <div className="card-body p-3 d-flex">
+                          <div className="feature feature-inline align-items-center">
+                            <div className="feature-text me-auto">
+                              <h4 className="title">Backtested Strategies</h4>
+                              <p>
+                                Our systems use historical data to test
+                                strategies before implementation, ensuring they
+                                are optimized for market conditions.
+                              </p>
+                            </div>
+                            <div className="feature-decoration flex-shrink-0">
+                              <img
+                                src="assets/images/1.png"
+                                alt="backtest-icon"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </section>
 
@@ -994,108 +1026,111 @@ Transform your trading strategy with our advanced forex commodity software,
                 </div>
               </div>
               <div className="container">
-  <div className="row g-gs">
-    <div className="col-md-6 col-xl-4" data-aos="fade-up">
-      <div className="card rounded-4 border-0 shadow-sm h-100">
-        <div className="card-body">
-          <div className="feature">
-            <div className="feature-media">
-              <div className="media media-middle media-lg text-white bg-primary rounded-3">
-                <em className="icon ni ni-globe" />
-              </div>
-            </div>
-            <div className="feature-text">
-              <h5 className="text-black">Strategy Design</h5>
-              <p>
-                Our experts work with you to understand your goals, trading
-                preferences, and risk tolerance, then design an algorithmic
-                strategy tailored to your needs.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+                <div className="row g-gs">
+                  <div className="col-md-6 col-xl-4" data-aos="fade-up">
+                    <div className="card rounded-4 border-0 shadow-sm h-100">
+                      <div className="card-body">
+                        <div className="feature">
+                          <div className="feature-media">
+                            <div className="media media-middle media-lg text-white bg-primary rounded-3">
+                              <em className="icon ni ni-globe" />
+                            </div>
+                          </div>
+                          <div className="feature-text">
+                            <h5 className="text-black">Strategy Design</h5>
+                            <p>
+                              Our experts work with you to understand your
+                              goals, trading preferences, and risk tolerance,
+                              then design an algorithmic strategy tailored to
+                              your needs.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
-    <div
-      className="col-md-6 col-xl-4"
-      data-aos="fade-up"
-      data-aos-delay="100"
-    >
-      <div className="card rounded-4 border-0 shadow-sm h-100">
-        <div className="card-body">
-          <div className="feature">
-            <div className="feature-media">
-              <div className="media media-middle media-lg text-white bg-info rounded-3">
-                <em className="icon ni ni-flag" />
-              </div>
-            </div>
-            <div className="feature-text">
-              <h5 className="text-black">Backtesting</h5>
-              <p>
-                We rigorously test the strategy against historical data to
-                ensure optimal performance under various market conditions.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+                  <div
+                    className="col-md-6 col-xl-4"
+                    data-aos="fade-up"
+                    data-aos-delay="100"
+                  >
+                    <div className="card rounded-4 border-0 shadow-sm h-100">
+                      <div className="card-body">
+                        <div className="feature">
+                          <div className="feature-media">
+                            <div className="media media-middle media-lg text-white bg-info rounded-3">
+                              <em className="icon ni ni-flag" />
+                            </div>
+                          </div>
+                          <div className="feature-text">
+                            <h5 className="text-black">Backtesting</h5>
+                            <p>
+                              We rigorously test the strategy against historical
+                              data to ensure optimal performance under various
+                              market conditions.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
-    <div
-      className="col-md-6 col-xl-4"
-      data-aos="fade-up"
-      data-aos-delay="200"
-    >
-      <div className="card rounded-4 border-0 shadow-sm h-100">
-        <div className="card-body">
-          <div className="feature">
-            <div className="feature-media">
-              <div className="media media-middle media-lg text-white bg-purple rounded-3">
-                <em className="icon ni ni-edit" />
-              </div>
-            </div>
-            <div className="feature-text">
-              <h5 className="text-black">Deployment</h5>
-              <p>
-                Once optimized, the algorithm is deployed on our secure
-                platform, ready to execute trades automatically according to
-                your specifications.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+                  <div
+                    className="col-md-6 col-xl-4"
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                  >
+                    <div className="card rounded-4 border-0 shadow-sm h-100">
+                      <div className="card-body">
+                        <div className="feature">
+                          <div className="feature-media">
+                            <div className="media media-middle media-lg text-white bg-purple rounded-3">
+                              <em className="icon ni ni-edit" />
+                            </div>
+                          </div>
+                          <div className="feature-text">
+                            <h5 className="text-black">Deployment</h5>
+                            <p>
+                              Once optimized, the algorithm is deployed on our
+                              secure platform, ready to execute trades
+                              automatically according to your specifications.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
-    <div
-      className="col-md-6 col-xl-4"
-      data-aos="fade-up"
-      data-aos-delay="300"
-    >
-      <div className="card rounded-4 border-0 shadow-sm h-100">
-        <div className="card-body">
-          <div className="feature">
-            <div className="feature-media">
-              <div className="media media-middle media-lg text-white bg-warning rounded-3">
-                <em className="icon ni ni-signal" />
+                  <div
+                    className="col-md-6 col-xl-4"
+                    data-aos="fade-up"
+                    data-aos-delay="300"
+                  >
+                    <div className="card rounded-4 border-0 shadow-sm h-100">
+                      <div className="card-body">
+                        <div className="feature">
+                          <div className="feature-media">
+                            <div className="media media-middle media-lg text-white bg-warning rounded-3">
+                              <em className="icon ni ni-signal" />
+                            </div>
+                          </div>
+                          <div className="feature-text">
+                            <h5 className="text-black">
+                              Ongoing Support and Optimization
+                            </h5>
+                            <p>
+                              Our team provides continuous monitoring, support,
+                              and adjustments to ensure your algorithm performs
+                              at its best in changing market environments.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="feature-text">
-              <h5 className="text-black">Ongoing Support and Optimization</h5>
-              <p>
-                Our team provides continuous monitoring, support, and
-                adjustments to ensure your algorithm performs at its best in
-                changing market environments.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
             </div>
 
             <section
@@ -1121,75 +1156,77 @@ Transform your trading strategy with our advanced forex commodity software,
                   </div>
                 </div>
                 <div className="section-content">
-  <div className="accordion accordion-flush" id="accordionFlushExample">
-    <div className="row justify-content-center pt-50">
-      <div className="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-        {faqContentLeft.map((faq, index) => (
-          <div
-            className="border-0 shadow mb-2 p-2 rounded"
-            data-aos="fade-up"
-            data-aos-delay={`${index * 100}`}
-            key={index}
-          >
-            <h2 className="accordion-header">
-              <button
-                className="accordion-button fw-semibold collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target={`#flush-collapseLeft${index}`}
-                aria-expanded="false"
-                aria-controls={`flush-collapseLeft${index}`}
-              >
-                {faq.question}
-              </button>
-            </h2>
-            <div
-              id={`flush-collapseLeft${index}`}
-              className="accordion-collapse collapse"
-            >
-              <div className="accordion-body">
-                <p>{faq.answer}</p>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
+                  <div
+                    className="accordion accordion-flush"
+                    id="accordionFlushExample"
+                  >
+                    <div className="row justify-content-center pt-50">
+                      <div className="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                        {faqContentLeft.map((faq, index) => (
+                          <div
+                            className="border-0 shadow mb-2 p-2 rounded"
+                            data-aos="fade-up"
+                            data-aos-delay={`${index * 100}`}
+                            key={index}
+                          >
+                            <h2 className="accordion-header">
+                              <button
+                                className="accordion-button fw-semibold collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target={`#flush-collapseLeft${index}`}
+                                aria-expanded="false"
+                                aria-controls={`flush-collapseLeft${index}`}
+                              >
+                                {faq.question}
+                              </button>
+                            </h2>
+                            <div
+                              id={`flush-collapseLeft${index}`}
+                              className="accordion-collapse collapse"
+                            >
+                              <div className="accordion-body">
+                                <p>{faq.answer}</p>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
 
-      <div className="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-        {faqContentRight.map((faq, index) => (
-          <div
-            className="border-0 shadow mb-2 p-2 rounded"
-            data-aos="fade-up"
-            data-aos-delay={`${index * 100 + 500}`}
-            key={index}
-          >
-            <h2 className="accordion-header">
-              <button
-                className="accordion-button fw-semibold collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target={`#flush-collapseRight${index}`}
-                aria-expanded="false"
-                aria-controls={`flush-collapseRight${index}`}
-              >
-                {faq.question}
-              </button>
-            </h2>
-            <div
-              id={`flush-collapseRight${index}`}
-              className="accordion-collapse collapse"
-            >
-              <div className="accordion-body">
-                <p>{faq.answer}</p>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
-</div>
-
+                      <div className="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                        {faqContentRight.map((faq, index) => (
+                          <div
+                            className="border-0 shadow mb-2 p-2 rounded"
+                            data-aos="fade-up"
+                            data-aos-delay={`${index * 100 + 500}`}
+                            key={index}
+                          >
+                            <h2 className="accordion-header">
+                              <button
+                                className="accordion-button fw-semibold collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target={`#flush-collapseRight${index}`}
+                                aria-expanded="false"
+                                aria-controls={`flush-collapseRight${index}`}
+                              >
+                                {faq.question}
+                              </button>
+                            </h2>
+                            <div
+                              id={`flush-collapseRight${index}`}
+                              className="accordion-collapse collapse"
+                            >
+                              <div className="accordion-body">
+                                <p>{faq.answer}</p>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </section>
 
@@ -1203,7 +1240,7 @@ Transform your trading strategy with our advanced forex commodity software,
                   </div>
                 </div>
               </div>
-              <div className="section-content">
+              {/* <div className="section-content">
                 <div className="row g-gs justify-content-center align-items-center">
                   <div className="col-lg-4" data-aos="zoom-in">
                     <div className="card border-0 shadow-tiny rounded-4">
@@ -1231,9 +1268,9 @@ Transform your trading strategy with our advanced forex commodity software,
                           generating profits has truly surpassed my
                           expectations. With Elite Algo Trading, I've seen a
                           significant improvement in my trading performance and
-                          efficiency. I highly recommend Elite Algo Trading to any
-                          trader looking for a reliable and innovative trading
-                          software solution.
+                          efficiency. I highly recommend Elite Algo Trading to
+                          any trader looking for a reliable and innovative
+                          trading software solution.
                         </p>
                         <div className="d-flex pt-3">
                           <div className="media media-lg media-middle media-lg rounded-pill">
@@ -1277,10 +1314,10 @@ Transform your trading strategy with our advanced forex commodity software,
                         <p>
                           Having been a seasoned trader for over 15 years, I've
                           encountered numerous trading software solutions.
-                          However, my experience with Elite Algo Trading has been
-                          unparalleled. Their platform offers a seamless trading
-                          experience, equipped with advanced features and an
-                          intuitive interface that streamlines my trading
+                          However, my experience with Elite Algo Trading has
+                          been unparalleled. Their platform offers a seamless
+                          trading experience, equipped with advanced features
+                          and an intuitive interface that streamlines my trading
                           activities.
                         </p>
                         <div className="d-flex pt-3">
@@ -1349,7 +1386,7 @@ Transform your trading strategy with our advanced forex commodity software,
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </main>
         </div>

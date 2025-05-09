@@ -142,7 +142,14 @@ export default function Indian() {
                         data-aos="fade-up"
                         data-aos-delay={index * 100}
                       >
-                        <div className="card h-100 shadow-sm rounded-lg p-4">
+                        <div
+                          className="card h-100 shadow-sm rounded-lg p-4"
+                          style={{
+                            background:
+                              "linear-gradient(135deg, rgba(255, 99, 132, 0.25), rgba(255, 99, 132, 0.10))",
+                            borderRadius: "16px",
+                          }}
+                        >
                           <h5 className="mb-2">{feature.title}</h5>
                           <p className="text-muted">{feature.desc}</p>
                         </div>

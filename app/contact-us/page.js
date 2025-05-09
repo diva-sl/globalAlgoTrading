@@ -5,27 +5,52 @@ import Swal from "sweetalert2";
 import ReCAPTCHA from "react-google-recaptcha";
 import axios from "axios";
 import { CircularProgress } from "@mui/material";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import RootLayout from "../layout";
+import AOS from "aos";
+import "aos/dist/aos.css"; // AOS styles
+import {
+  FaCogs,
+  FaComments,
+  FaFacebook,
+  FaTwitter,
+  FaLinkedin,
+  FaInstagram,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
 
 function Contact() {
   const [captchaToken, setCaptchaToken] = useState("");
-  const [loading, setloading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleCaptchaChange = (token) => {
     setCaptchaToken(token);
   };
+
   const [values, setValues] = useState({
-    name: "" ,
-    email: "" ,
-    phone: "" ,
-    message: "" 
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
   });
 
-  const metaData = { 
-    title: "CONTANCT US - Elite Algo Trading",
-    description: "Contact Elite Algo Trading for expert support on AI and algorithmic trading. Reach out for inquiries, assistance, or more information about our innovative trading solutions.",
-    canonical: "https://algotradingelite.com//contact-us",
+  useEffect(() => {
+    // Initialize AOS with custom settings
+    AOS.init({
+      duration: 800, // Duration of the animation (milliseconds)
+      delay: 200, // Delay before the animation starts (milliseconds)
+      once: true, // Animation happens only once when scrolling into view
+    });
+
+    // Optionally, you can refresh AOS animations when needed
+    // AOS.refresh();
+  }, []);
+
+  const metaData = {
+    title: "CONTACT US - Elite Algo Trading",
+    description:
+      "Contact Elite Algo Trading for expert support on AI and algorithmic trading. Reach out for inquiries, assistance, or more information about our innovative trading solutions.",
+    canonical: "https://algotradingelite.com/contact-us",
   };
 
   return (
@@ -47,66 +72,102 @@ function Contact() {
                 <div className="section-head">
                   <div className="row justify-content-center text-center">
                     <div className="col-lg-11 col-xl-10 col-xxl-9">
-                      <h6 className="overline-title text-primary-2">
-                        Contact us
-                      </h6>
+                      <h6 className="overline-title">Contact us</h6>
                       <h1 className="title">Reach Out to Us</h1>
                       <p className="lead">
-                        We love getting feedback, Questions, and hearing what
-                        you have to say
+                        We love getting feedback, questions, and hearing what
+                        you have to say!
                       </p>
                     </div>
                   </div>
                 </div>
-                <div className="section-content">
+                <div className="section-content py-5 px-3">
                   <div className="row g-gs justify-content-center justify-content-lg-between">
                     <div className="col-xl-5 col-lg-6 col-md-8 text-lg-start text-center">
-                      <div className="block-text pt-lg-4">
-                        <h3 className="title h2">Let's talk</h3>
-                        <ul className="row gy-4 pt-4">
+                      {/* Business Hours Section */}
+                      <section
+                        className="business-hours-section mt-5 p-4 bg-white shadow-sm rounded"
+                        data-aos="fade-up"
+                        data-aos-duration="800"
+                        data-aos-delay="200"
+                      >
+                        <h4 className="mb-3 text-start underline-heading">
+                          Our Business Hours
+                        </h4>
+                        <ul className="list-group text-start">
+                          <li className="list-group-item bg-white border-0 px-0">
+                            Monday - Friday: 9:00 AM - 6:00 PM
+                          </li>
+                          <li className="list-group-item bg-white border-0 px-0">
+                            Saturday: 10:00 AM - 2:00 PM
+                          </li>
+                          <li className="list-group-item bg-white border-0 px-0">
+                            Sunday: Closed
+                          </li>
+                        </ul>
+                      </section>
+
+                      <div
+                        className="block-text pt-lg-4 p-4 bg-white rounded shadow-sm"
+                        data-aos="fade-up"
+                        data-aos-duration="800"
+                        data-aos-delay="400"
+                      >
+                        <h3 className="title h3 mb-4 text-start underline-heading">
+                          Contact Information
+                        </h3>
+
+                        <ul className="row gy-4">
                           <li className="col-12">
-                            <h5>Address</h5>
-                            <div className="d-flex flex-column flex-lg-row align-items-center justify-content-center justify-content-lg-start">
+                            <h6 className="mb-2 text-start">Address</h6>
+                            <div className="d-flex flex-column flex-lg-row align-items-center align-items-lg-start text-dark">
                               <em className="icon text-base fs-5 mb-2 mb-lg-0 me-lg-2 ni ni-map-pin-fill" />
-                              <span></span>
+                              <span>1234 Trading Street, Finance City</span>
                             </div>
                           </li>
+
                           <li className="col-12">
-                            <h5>Contact Number</h5>
-                            <div className="d-flex flex-column flex-lg-row align-items-center justify-content-center justify-content-lg-start">
+                            <h6 className="mb-2 text-start">Contact Number</h6>
+                            <div className="d-flex flex-column flex-lg-row align-items-center align-items-lg-start text-dark">
                               <em className="icon text-base fs-5 mb-2 mb-lg-0 me-lg-2 ni ni-call-alt-fill" />
-                              <span>
-                                <a
-                                  href="tel:08068493326"
-                                  className="text-primary-2"
-                                >
-                                  +91 80888566821{" "}
-                                </a>
-                              </span>
+                              <a
+                                href="tel:+9180888566821"
+                                className="text-primary-2"
+                              >
+                                +91 80888566821
+                              </a>
                             </div>
                           </li>
+
                           <li className="col-12">
-                            <h5>Email Id</h5>
-                            <div className="d-flex flex-column flex-lg-row align-items-center justify-content-center justify-content-lg-start">
+                            <h6 className="mb-2 text-start">Email Id</h6>
+                            <div className="d-flex flex-column flex-lg-row align-items-center align-items-lg-start text-dark">
                               <em className="icon text-base fs-5 mb-2 mb-lg-0 me-lg-2 ni ni-mail-fill" />
-                              <span>
-                                <a
-                                  href="mailto:support@tradingindicators360.com"
-                                  className="text-primary-2"
-                                >
-                                  support@Elite Algo Trading.com.co
-                                </a>
-                              </span>
+                              <a
+                                href="mailto:support@elitealgotrading.com"
+                                className="text-primary-2"
+                              >
+                                support@elitealgotrading.com
+                              </a>
                             </div>
                           </li>
                         </ul>
                       </div>
                     </div>
-                    <div className="col-lg-6">
+
+                    <div
+                      className="col-lg-6"
+                      data-aos="fade-up"
+                      data-aos-duration="800"
+                      data-aos-delay="200"
+                    >
                       <div className="card-2 border-0 shadow-sm rounded-4">
                         <div className="card-body">
-                          <h3 className="title fw-medium mb-4">
-                            Please feel free to contact us using form below
+                          <h3
+                            className="title fw-medium mb-4 text-center"
+                            style={{ color: "#27ae60" }}
+                          >
+                            Get in Touch with Us
                           </h3>
                           <form
                             onSubmit={async (e) => {
@@ -114,7 +175,7 @@ function Contact() {
 
                               if (!captchaToken) {
                                 Swal.fire({
-                                  text: "Captha is Required",
+                                  text: "Captcha is required",
                                   icon: "warning",
                                 });
                                 return;
@@ -128,33 +189,15 @@ function Contact() {
                                 });
                                 return;
                               }
-                              const currentUrl = window?.location?.href;
-                              let updatedUrl;
 
-                              if (
-                                currentUrl &&
-                                (currentUrl.startsWith("http://") ||
-                                  currentUrl.startsWith("https://"))
-                              ) {
-                                updatedUrl = currentUrl.replace(
-                                  /^(https?:\/\/)/,
-                                  "www."
-                                );
-                              } else {
-                                console.log(currentUrl);
-                              }
                               try {
-                                setloading(true);
+                                setLoading(true);
                                 const formData = new FormData();
                                 formData.append("captcha_token", captchaToken);
                                 formData.append("name", values.name);
                                 formData.append("email", values.email);
                                 formData.append("phone", values?.phone);
                                 formData.append("note", values?.message);
-                                formData.append(
-                                  "domain",
-                                  updatedUrl.split("/")[0]
-                                );
 
                                 const res = await axios.post(
                                   "https://master.intact.co.in/enquiry-api/v2/store-enq",
@@ -165,8 +208,9 @@ function Contact() {
                                     },
                                   }
                                 );
+
                                 if (res?.data?.status) {
-                                  setloading(false);
+                                  setLoading(false);
                                   Swal.fire({
                                     title: "Success",
                                     text: res?.data?.message,
@@ -178,78 +222,66 @@ function Contact() {
                                   });
                                 }
                               } catch (error) {
-                                if (error?.response?.data?.message) {
-                                  Swal.fire({
-                                    title: "Error",
-                                    text: error?.response?.data?.message,
-                                    icon: "error",
-                                  });
-                                  setTimeout(() => {
-                                    window.location.reload();
-                                  }, 2000);
-                                }
-                                if (error?.response?.data?.errors?.email) {
-                                  Swal.fire({
-                                    title: "Error",
-                                    text: error?.response?.data?.errors
-                                      ?.email[0],
-                                    icon: "error",
-                                  });
-                                }
-                                if (error?.response?.data?.errors?.phone) {
-                                  Swal.fire({
-                                    title: "Error",
-                                    text: error?.response?.data?.errors
-                                      ?.phone[0],
-                                    icon: "error",
-                                  });
-                                }
-                                setloading(false);
+                                setLoading(false);
+                                Swal.fire({
+                                  title: "Error",
+                                  text: error?.response?.data?.message,
+                                  icon: "error",
+                                });
                               }
-                              setloading(false);
                             }}
                             className="form-submit-init"
                           >
                             <div className="row g-4">
-                              <div className="col-13">
+                              {/** Name Field */}
+                              <div className="col-12">
                                 <div className="form-group">
                                   <div className="form-control-wrap">
                                     <input
                                       type="text"
-                                      // name="name"
                                       className="form-control form-control-lg"
-                                      placeholder="Your Name"
+                                      placeholder="Your Full Name"
                                       style={{
-                                        borderColor: "#0b1f36",
-                                        color: "#fff",
+                                        borderColor: "#ccc",
+                                        color: "#000",
                                       }}
+                                      onFocus={(e) =>
+                                        (e.target.style.borderColor = "#5DC65D")
+                                      }
+                                      onBlur={(e) =>
+                                        (e.target.style.borderColor = "#ccc")
+                                      }
                                       required
                                       value={values?.name}
-                                      onChange={(e) => {
-                                        const inputValue = e.target.value;
-                                        const sanitizedValue =
-                                          inputValue.replace(/[^a-zA-Z ]/g, "");
+                                      onChange={(e) =>
                                         setValues((prev) => ({
                                           ...prev,
-                                          name: sanitizedValue,
-                                        }));
-                                      }}
+                                          name: e.target.value,
+                                        }))
+                                      }
                                     />
                                   </div>
                                 </div>
                               </div>
-                              <div className="col-13">
+
+                              {/** Email Field */}
+                              <div className="col-12">
                                 <div className="form-group">
                                   <div className="form-control-wrap">
                                     <input
                                       type="email"
-                                      // name="email"
                                       className="form-control form-control-lg"
                                       placeholder="Your Email Id"
                                       style={{
-                                        borderColor: "#0b1f36",
-                                        color: "#fff",
+                                        borderColor: "#ccc",
+                                        color: "#000",
                                       }}
+                                      onFocus={(e) =>
+                                        (e.target.style.borderColor = "#5DC65D")
+                                      }
+                                      onBlur={(e) =>
+                                        (e.target.style.borderColor = "#ccc")
+                                      }
                                       required
                                       value={values?.email}
                                       onChange={(e) =>
@@ -262,44 +294,40 @@ function Contact() {
                                   </div>
                                 </div>
                               </div>
-                              <div className="col-13">
+
+                              {/** Phone Field */}
+                              <div className="col-12">
                                 <div className="form-group">
                                   <div className="form-control-wrap">
                                     <input
                                       type="text"
-                                      // name="phone"
                                       className="form-control form-control-lg"
-                                      placeholder="Phone Number"
+                                      placeholder="Your Phone Number"
                                       style={{
-                                        borderColor: "#0b1f36",
-                                        color: "#fff",
+                                        borderColor: "#ccc",
+                                        color: "#000",
                                       }}
+                                      onFocus={(e) =>
+                                        (e.target.style.borderColor = "#5DC65D")
+                                      }
+                                      onBlur={(e) =>
+                                        (e.target.style.borderColor = "#ccc")
+                                      }
                                       required
                                       value={values?.phone}
-                                      onChange={(e) => {
-                                        const inputValue = e.target.value;
-                                        // Remove any non-numeric characters
-                                        const sanitizedValue =
-                                          inputValue.replace(/[^0-9]/g, "");
-                                        // Trim the sanitized value to ensure it's between 10 and 15 characters
-                                        const finalValue = sanitizedValue.slice(
-                                          0,
-                                          15
-                                        );
-
-                                        // Update the state with the sanitized and trimmed value
+                                      onChange={(e) =>
                                         setValues((prev) => ({
                                           ...prev,
-                                          phone: finalValue,
-                                        }));
-                                      }}
-                                      min={10}
-                                      max={15}
+                                          phone: e.target.value,
+                                        }))
+                                      }
                                     />
                                   </div>
                                 </div>
                               </div>
-                              <div className="col-13">
+
+                              {/** Message Field */}
+                              <div className="col-12">
                                 <div className="form-group">
                                   <div className="form-control-wrap">
                                     <textarea
@@ -307,59 +335,265 @@ function Contact() {
                                       className="form-control form-control-lg"
                                       placeholder="Enter your message"
                                       style={{
-                                        borderColor: "#0b1f36",
-                                        color: "#fff",
+                                        borderColor: "#ccc",
+                                        color: "#000",
                                       }}
+                                      onFocus={(e) =>
+                                        (e.target.style.borderColor = "#5DC65D")
+                                      }
+                                      onBlur={(e) =>
+                                        (e.target.style.borderColor = "#ccc")
+                                      }
                                       value={values?.message}
-                                      onChange={(e) => {
-                                        const inputValue = e.target.value;
-                                        const sanitizedValue =
-                                          inputValue.replace(
-                                            /[^a-zA-Z0-9 .]/g,
-                                            ""
-                                          );
+                                      onChange={(e) =>
                                         setValues((prev) => ({
                                           ...prev,
-                                          message: sanitizedValue,
-                                        }));
-                                      }}
+                                          message: e.target.value,
+                                        }))
+                                      }
                                     />
                                   </div>
                                 </div>
                               </div>
-                              <div className="col-13">
-                                <div className="form-group">
+
+                              {/** Captcha */}
+                              <div className="col-12 text-center">
+                                <div className="form-group d-flex justify-content-center">
                                   <ReCAPTCHA
                                     sitekey="6Ldd1eMpAAAAAFmJZSm4ygqwFPCIERv7XTCOU2iE"
                                     onChange={handleCaptchaChange}
-                                    style={{
-                                      transform: "scale(0.60)",
-                                      WebkitTransform: "scale(0.60)",
-                                      transformOrigin: "0 0",
-                                      WebkitTransformOrigin: "0 0",
-                                      marginLeft: "25%",
-                                    }}
-                                    className='col-12"'
                                   />
-
-                                  <div className="col-12"></div>
-                                  <button className="btn-anim" type="submit">
-                                    {loading ? (
-                                      <CircularProgress
-                                        size={21}
-                                        style={{ color: "white" }}
-                                      />
-                                    ) : (
-                                      " Send Message"
-                                    )}
-                                  </button>
                                 </div>
-                                <div className="form-result mt-4" />
-                                <div className="col-13"></div>
+                              </div>
+
+                              {/** Submit Button */}
+                              <div className="col-12">
+                                <button
+                                  type="submit"
+                                  className="btn btn-lg"
+                                  style={{
+                                    width: "100%",
+                                    backgroundColor: "#065f46", // Dark green (initial)
+                                    borderColor: "#047857", // Dark green (initial)
+                                    color: "#fff",
+                                  }}
+                                  onMouseOver={(e) => {
+                                    e.target.style.backgroundColor = "#047857"; // Light green on hover
+                                    e.target.style.borderColor = "#047857"; // Light green on hover
+                                  }}
+                                  onMouseOut={(e) => {
+                                    e.target.style.backgroundColor = "#065f46"; // Dark green on mouse out
+                                    e.target.style.borderColor = "#047857"; // Dark green on mouse out
+                                  }}
+                                  disabled={loading}
+                                >
+                                  {loading ? (
+                                    <CircularProgress
+                                      size={24}
+                                      color="inherit"
+                                    />
+                                  ) : (
+                                    "Submit"
+                                  )}
+                                </button>
                               </div>
                             </div>
                           </form>
                         </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section className="service-inquiry-map-social-container mt-5 mb-5">
+              <div className="container">
+                <div className="row">
+                  {/* Left Column */}
+                  <div className="col-md-6 left-column">
+                    <div
+                      className="service-inquiry-section"
+                      data-aos="fade-right"
+                      data-aos-duration="800"
+                    >
+                      <h3
+                        className="text-start mb-4"
+                        style={{
+                          borderBottom: "2px solid rgb(142, 241, 183)",
+                          display: "inline-block",
+                        }}
+                      >
+                        Inquire About Our Services
+                      </h3>
+                      <form className="service-inquiry-form">
+                        {/* Service Select */}
+                        <div
+                          className="form-group mb-4"
+                          data-aos="fade-right"
+                          data-aos-duration="800"
+                          data-aos-delay="100"
+                        >
+                          <label className="d-flex align-items-center gap-2">
+                            <FaCogs className="text-success" /> What service are
+                            you interested in?
+                          </label>
+                          <select className="form-control mt-1">
+                            <option value="algorithmic-trading">
+                              Algorithmic Trading
+                            </option>
+                            <option value="ai-trading-solutions">
+                              AI Trading Solutions
+                            </option>
+                            <option value="consulting">Consulting</option>
+                          </select>
+                        </div>
+
+                        {/* Message Box */}
+                        <div
+                          className="form-group mb-4"
+                          data-aos="fade-right"
+                          data-aos-duration="800"
+                          data-aos-delay="200"
+                        >
+                          <label className="d-flex align-items-center gap-2">
+                            <FaComments className="text-success" /> Additional
+                            Message
+                          </label>
+                          <textarea
+                            className="form-control mt-1"
+                            rows="4"
+                          ></textarea>
+                        </div>
+
+                        {/* Submit Button */}
+                        <div
+                          data-aos="fade-right"
+                          data-aos-duration="800"
+                          data-aos-delay="300"
+                        >
+                          <button
+                            type="submit"
+                            className="btn btn-lg"
+                            style={{
+                              width: "100%",
+                              backgroundColor: "#065f46",
+                              borderColor: "#065f46",
+                              color: "#fff",
+                            }}
+                            onMouseOver={(e) => {
+                              e.target.style.backgroundColor = "#047857";
+                              e.target.style.borderColor = "#047857";
+                            }}
+                            onMouseOut={(e) => {
+                              e.target.style.backgroundColor = "#065f46";
+                              e.target.style.borderColor = "#065f46";
+                            }}
+                          >
+                            Submit Inquiry
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+
+                    {/* Social Icons */}
+                    <div
+                      className="social-links-section mt-5"
+                      data-aos="fade-right"
+                      data-aos-duration="800"
+                      data-aos-delay="400"
+                    >
+                      <h3
+                        className="text-start mb-3"
+                        style={{
+                          borderBottom: "2px solid rgb(142, 241, 183)",
+                          display: "inline-block",
+                        }}
+                      >
+                        Follow Us
+                      </h3>
+                      <div className="social-links d-flex justify-content-start gap-4 mt-2">
+                        <a
+                          href="https://facebook.com"
+                          className="social-icon fs-4 text-dark"
+                          data-aos="fade-left"
+                          data-aos-delay="1000"
+                        >
+                          <FaFacebook className="social-icon-img" />
+                        </a>
+                        <a
+                          href="https://twitter.com"
+                          className="social-icon fs-4 text-dark"
+                          data-aos="fade-left"
+                          data-aos-delay="1200"
+                        >
+                          <FaTwitter className="social-icon-img" />
+                        </a>
+                        <a
+                          href="https://linkedin.com"
+                          className="social-icon fs-4 text-dark"
+                          data-aos="fade-left"
+                          data-aos-delay="1400"
+                        >
+                          <FaLinkedin className="social-icon-img" />
+                        </a>
+                        <a
+                          href="https://instagram.com"
+                          className="social-icon fs-4 text-dark"
+                          data-aos="fade-left"
+                          data-aos-delay="1600"
+                        >
+                          <FaInstagram className="social-icon-img" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Map Column (you can keep or update separately) */}
+                  <div
+                    className="col-md-6 map-section"
+                    data-aos="fade-left"
+                    data-aos-duration="1000"
+                    style={{
+                      backgroundColor: "#ebf8ff", // Light off-white gray
+                      padding: "20px",
+                      borderRadius: "8px",
+                    }}
+                  >
+                    <h3 className="text-center mb-4 d-flex justify-content-center align-items-center gap-2">
+                      <FaMapMarkerAlt className="text-success" /> Our Location
+                    </h3>
+
+                    <div
+                      className="map-container"
+                      style={{ position: "relative" }}
+                    >
+                      <iframe
+                        src="https://www.google.com/maps/embed?pb=your-map-embed-link"
+                        width="100%"
+                        height="450"
+                        style={{ border: 0 }}
+                        allowFullScreen=""
+                        loading="lazy"
+                      />
+                      <div
+                        style={{
+                          position: "absolute",
+                          top: "50%",
+                          left: "50%",
+                          transform: "translate(-50%, -50%)",
+                          zIndex: "999",
+                        }}
+                      >
+                        {/* Custom Map Marker */}
+                        <img
+                          src="your-custom-marker-image-url.png"
+                          alt="Custom Marker"
+                          style={{
+                            width: "40px", // Adjust the size of your marker
+                            height: "40px",
+                            objectFit: "contain",
+                          }}
+                        />
                       </div>
                     </div>
                   </div>

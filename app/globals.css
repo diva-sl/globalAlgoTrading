@@ -425,6 +425,21 @@
 .text-title {
   color: #27ae60 !important;
 }
+
+.btn-anim {
+  background-color: #065f46 !important;
+  border-color: #065f46 !important;
+}
+
+.btn-anim:hover {
+  background-color: #047857 !important;
+  border-color: #047857 !important;
+}
+
+.form-control:focus {
+  border-color: #065f46 !important;
+}
+
 /* Secondary Button: Gray */
 .btn-secondary {
   background-color: #f0f0f0 !important;
@@ -575,21 +590,197 @@
     flex-direction: row;
   }
 }
-/* lottie card style */
-/*
-.card-slider {
+.service-inquiry-map-social-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.left-column {
   display: flex;
   flex-direction: column;
-  transition: transform 0.5s ease-in-out;
+  justify-content: space-between;
 }
 
- .scroll-card {
-  transition: opacity 0.5s, transform 0.5s ease-in-out;
-  opacity: 0;
-  transform: translateY(10px); 
+.service-inquiry-section,
+.social-links-section {
+  margin-bottom: 30px;
 }
 
-.scroll-card.active {
-  opacity: 1;
-  transform: translateY(0);
-} */
+.service-inquiry-form .form-group {
+  margin-bottom: 15px;
+}
+
+.service-inquiry-form label {
+  font-weight: bold;
+}
+
+.service-inquiry-form .form-control {
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.service-inquiry-form .btn {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+.service-inquiry-form .btn:hover {
+  background-color: #0056b3;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.social-icon {
+  font-size: 2rem;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #007bff;
+}
+
+.map-container iframe {
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .service-inquiry-map-social-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .service-inquiry-section,
+  .social-links-section,
+  .map-section {
+    width: 100%;
+  }
+}
+.section-content {
+  margin-top: 50px;
+}
+
+.block-text {
+  padding-top: 20px;
+}
+
+.title {
+  font-weight: bold;
+}
+
+ul li {
+  font-size: 16px;
+}
+
+ul .list-group-item {
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 15px;
+}
+
+.list-group-item {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+}
+
+.list-group-item:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.business-hours-section {
+  background-color: #f7f7f7;
+  padding: 30px 0;
+  border-radius: 8px;
+}
+
+.business-hours-section .list-group-item {
+  background-color: transparent;
+  border: none;
+}
+
+.business-hours-section h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-primary-2 {
+  color: #007bff;
+}
+
+@media (max-width: 768px) {
+  .col-xl-5,
+  .col-lg-6,
+  .col-md-8 {
+    width: 100%;
+  }
+  .business-hours-section {
+    padding: 20px;
+  }
+}
+
+.form-control:focus,
+textarea:focus {
+  border-color: #065f46 !important;
+  box-shadow: 0 0 0 0.2rem rgba(6, 95, 70, 0.25) !important;
+  outline: none;
+}
+
+.btn-primary-2 {
+  background-color: #065f46 !important;
+  border-color: #065f46 !important;
+}
+
+.btn-primary-2:hover {
+  background-color: #047857 !important;
+  border-color: #047857 !important;
+}
+.shadow-custom {
+  box-shadow: 2px 2px 8px rgba(169, 169, 169, 0.4); /* Light gray shadow on all sides */
+}
+/* Default icon color */
+.social-icon-img {
+  color: #27ae60;
+  transition: color 0.3s;
+}
+
+/* Hover effect for each icon */
+.social-icon-img:hover {
+  color: #047857;
+}
+
+/* Optional: styling the anchor tags (if needed) */
+.social-icon {
+  text-decoration: none;
+  display: inline-block;
+}
+
+.social-icon:hover {
+  color: #047857 !important; /* Ensures the icon gets the correct hover color */
+}

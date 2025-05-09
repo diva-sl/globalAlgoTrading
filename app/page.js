@@ -655,7 +655,7 @@ export default function Home() {
                           }}
                         >
                           <a
-                            href="#"
+                            href="/forexcurrencysoftware/"
                             className="cta-button inline-block bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700"
                             style={{
                               textDecoration: "none",
@@ -737,7 +737,7 @@ export default function Home() {
                           }}
                         >
                           <a
-                            href="#"
+                            href="/cryptosoftware"
                             className="cta-button inline-block bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 sm:px-8 sm:py-3"
                             style={{
                               textDecoration: "none",
@@ -819,7 +819,7 @@ export default function Home() {
                           }}
                         >
                           <a
-                            href="#"
+                            href="/indianmarketsoftware"
                             className="cta-button inline-block bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 sm:px-8 sm:py-3"
                             style={{
                               textDecoration: "none",
@@ -900,7 +900,7 @@ export default function Home() {
                           }}
                         >
                           <a
-                            href="#"
+                            href="/commoditysoftware"
                             className="cta-button inline-block bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 sm:px-8 sm:py-3"
                             style={{
                               textDecoration: "none",

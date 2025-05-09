@@ -141,7 +141,14 @@ export default function Forex() {
                         data-aos="fade-up"
                         data-aos-delay={index * 100}
                       >
-                        <div className="card h-100 shadow-sm rounded-lg p-4">
+                        <div
+                          className="card h-100 shadow-sm rounded-lg p-4"
+                          style={{
+                            background:
+                              "linear-gradient(135deg, rgba(255, 99, 132, 0.25), rgba(255, 99, 132, 0.10))",
+                            borderRadius: "16px",
+                          }}
+                        >
                           <h5 className="mb-2">{feature.title}</h5>
                           <p className="text-muted">{feature.desc}</p>
                         </div>
@@ -380,73 +387,72 @@ export default function Forex() {
                 </div>
               </section>
               {/* --- Forex Trading Software - Plan Comparison --- */}
-<section
-  className="section bg-light"
-  data-aos="fade-up"
-  data-aos-duration="1000"
->
-  <div className="container">
-    <div
-      className="section-head text-center mb-5"
-      data-aos="zoom-in"
-      data-aos-duration="800"
-    >
-      <h6 className="overline-title text-[#27ae60]">
-        Forex Trading Plans
-      </h6>
-      <h2 className="title">
-        Choose the Best Plan for Your Forex Trading Needs
-      </h2>
-    </div>
-    <table
-      className="table table-bordered text-center"
-      data-aos="fade-up"
-      data-aos-delay="200"
-    >
-      <thead>
-        <tr>
-          <th>Feature</th>
-          <th>Starter</th>
-          <th>Pro</th>
-          <th>Elite</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr data-aos="fade-right" data-aos-delay="100">
-          <td>Real-time Currency Signals</td>
-          <td>✔</td>
-          <td>✔</td>
-          <td>✔</td>
-        </tr>
-        <tr data-aos="fade-right" data-aos-delay="200">
-          <td>Advanced Charting Tools</td>
-          <td>Basic</td>
-          <td>Pro Charts</td>
-          <td>Elite Charts + Custom Indicators</td>
-        </tr>
-        <tr data-aos="fade-right" data-aos-delay="300">
-          <td>Forex Strategy Backtesting</td>
-          <td>❌</td>
-          <td>✔</td>
-          <td>✔</td>
-        </tr>
-        <tr data-aos="fade-right" data-aos-delay="400">
-          <td>Global Market Coverage</td>
-          <td>Major Pairs</td>
-          <td>Major + Minor Pairs</td>
-          <td>All Major, Minor & Exotic Pairs</td>
-        </tr>
-        <tr data-aos="fade-right" data-aos-delay="500">
-          <td>Priority Support</td>
-          <td>Email</td>
-          <td>Email + WhatsApp</td>
-          <td>Dedicated Manager</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
+              <section
+                className="section bg-light"
+                data-aos="fade-up"
+                data-aos-duration="1000"
+              >
+                <div className="container">
+                  <div
+                    className="section-head text-center mb-5"
+                    data-aos="zoom-in"
+                    data-aos-duration="800"
+                  >
+                    <h6 className="overline-title text-[#27ae60]">
+                      Forex Trading Plans
+                    </h6>
+                    <h2 className="title">
+                      Choose the Best Plan for Your Forex Trading Needs
+                    </h2>
+                  </div>
+                  <table
+                    className="table table-bordered text-center"
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                  >
+                    <thead>
+                      <tr>
+                        <th>Feature</th>
+                        <th>Starter</th>
+                        <th>Pro</th>
+                        <th>Elite</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr data-aos="fade-right" data-aos-delay="100">
+                        <td>Real-time Currency Signals</td>
+                        <td>✔</td>
+                        <td>✔</td>
+                        <td>✔</td>
+                      </tr>
+                      <tr data-aos="fade-right" data-aos-delay="200">
+                        <td>Advanced Charting Tools</td>
+                        <td>Basic</td>
+                        <td>Pro Charts</td>
+                        <td>Elite Charts + Custom Indicators</td>
+                      </tr>
+                      <tr data-aos="fade-right" data-aos-delay="300">
+                        <td>Forex Strategy Backtesting</td>
+                        <td>❌</td>
+                        <td>✔</td>
+                        <td>✔</td>
+                      </tr>
+                      <tr data-aos="fade-right" data-aos-delay="400">
+                        <td>Global Market Coverage</td>
+                        <td>Major Pairs</td>
+                        <td>Major + Minor Pairs</td>
+                        <td>All Major, Minor & Exotic Pairs</td>
+                      </tr>
+                      <tr data-aos="fade-right" data-aos-delay="500">
+                        <td>Priority Support</td>
+                        <td>Email</td>
+                        <td>Email + WhatsApp</td>
+                        <td>Dedicated Manager</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </section>
 
               {/* --- Call to Action Section --- */}
               <section className="section text-center" data-aos="fade-up">

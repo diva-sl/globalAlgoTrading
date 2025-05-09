@@ -7,10 +7,10 @@ import RootLayout from "../layout";
 
 export default function About() {
   const metaData = {
-    title: "ABOUT US - Elite Algo Trading",
+    title: "ABOUT US - Global Algo Trading",
     description:
-      "Discover Elite Algo Tradings innovation in AI & algorithmic trading. Empowering traders with advanced solutions for stocks, cryptocurrencies, and commodities.",
-    canonical: "https://algotradingelite.com//about",
+      "Discover Global Algo Trading's cutting-edge solutions for AI & algorithmic trading. Empowering traders with innovative tools for stocks, cryptocurrencies, forex, and commodities.",
+    canonical: "https://globalalgotrading.com/about",
   };
   return (
     <RootLayout metadata={metaData}>
@@ -35,7 +35,7 @@ export default function About() {
                         <h6 className="overline-title text-primary">
                           About Us
                         </h6>
-                        <h2 className="title h1">Elite Algo Trading</h2>
+                        <h2 className="title h1">Global Algo Trading</h2>
                       </div>
                     </div>
                   </div>
@@ -46,57 +46,31 @@ export default function About() {
                           <img
                             className="w-100"
                             src="/images/about.jpg"
-                            alt=""
+                            alt="Global Algo Trading"
                           />
                         </div>
                       </div>
                       <div className="col-lg-6">
                         <div className="block-text pe-xxl-7">
                           <p className="lead">
-                            Welcome to Elite Trading – Where innovation meets
-                            precision in the world of algorithmic trading. We
-                            are a cutting-edge financial technology firm
-                            dedicated to providing institutional-grade trading
-                            strategies powered by advanced algorithms and
-                            artificial intelligence. At Elite Trading, we
-                            leverage the latest in quantitative analysis,
-                            machine learning, and high-frequency trading to
-                            offer our clients an edge in today's competitive
-                            markets.
+                            Welcome to Global Algo Trading – Where technology
+                            meets finance to deliver exceptional algorithmic
+                            trading solutions. We offer high-frequency trading
+                            strategies using artificial intelligence and machine
+                            learning to gain a competitive edge in global
+                            financial markets.
                           </p>
                           <p className="lead">
-                            Founded by a team of seasoned traders, data
-                            scientists, and financial engineers, we are
-                            committed to developing intelligent, efficient, and
-                            adaptive trading solutions. Our mission is to bring
-                            professional-level trading strategies to both
-                            institutional and retail traders, creating
-                            opportunities for significant growth and sustainable
-                            success.
+                            Founded by a group of expert traders, data
+                            scientists, and engineers, we are driven by the
+                            mission to democratize access to world-class trading
+                            algorithms for both institutional and retail
+                            investors.
                           </p>
-                          {/* <ul className="list gy-3 pe-xxl-7">
-                            <li>
-                              <em className="icon text-success fs-5 ni ni-check-circle-fill" />
-                              <span>
-                                Accessible interfaces cater to traders of all
-                                proficiency levels, fostering inclusivity in the
-                                pursuit of success across stocks,
-                                cryptocurrencies, and commodities.
-                              </span>
-                            </li>
-                            <li>
-                              <em className="icon text-success fs-5 ni ni-check-circle-fill" />
-                              <span>
-                                Beyond software, Elite Algo Trading offers a holistic
-                                approach, equipping traders with educational
-                                resources and ensuring they're armed with
-                                knowledge for astute decision-making.
-                              </span>
-                            </li>
-                          </ul> */}
+
                           <ul className="btn-list btn-list-inline gy-0">
                             <li>
-                              <a href="/" className="btn btn-lg btn-primary">
+                              <a href="/" className="cta-button inline-block">
                                 <span>Get Started</span>
                                 <em className="icon ni ni-arrow-long-right" />
                               </a>
@@ -136,12 +110,12 @@ export default function About() {
                               </div>
                               <div className="feature-text text-base">
                                 <h3 className="title">
-                                  Strategic Market Intelligence
+                                  AI-Driven Market Intelligence
                                 </h3>
                                 <p>
-                                  Get comprehensive market trend analysis,
-                                  behavior insights, and economic indicators to
-                                  make informed trading decisions.
+                                  Leverage our AI tools for comprehensive market
+                                  insights, behavioral analysis, and economic
+                                  indicators to optimize trading decisions.
                                 </p>
                               </div>
                             </div>
@@ -161,11 +135,13 @@ export default function About() {
                                 </div>
                               </div>
                               <div className="feature-text text-base">
-                                <h3 className="title">Organized Trading</h3>
+                                <h3 className="title">
+                                  Seamless Trading Platform
+                                </h3>
                                 <p>
-                                  Experience a streamlined and efficient trading
-                                  process with our well-structured platform for
-                                  smooth trading operations.
+                                  Our platform ensures smooth, seamless trading
+                                  experiences with user-friendly features,
+                                  robust execution, and cutting-edge technology.
                                 </p>
                               </div>
                             </div>
@@ -186,14 +162,12 @@ export default function About() {
                               </div>
                               <div className="feature-text text-base">
                                 <h3 className="title">
-                                  {" "}
-                                  Expert Investment Direction
+                                  Expert Trading Strategies
                                 </h3>
                                 <p>
-                                  Benefit from expert guidance and strategic
-                                  advice to maximize your investment potential
-                                  with personalized investment strategies while
-                                  minimizing risks.
+                                  Access customized investment strategies and
+                                  personalized guidance from industry experts to
+                                  maximize returns and minimize risk.
                                 </p>
                               </div>
                             </div>
@@ -215,12 +189,12 @@ export default function About() {
                               </div>
                               <div className="feature-text text-base">
                                 <h3 className="title">
-                                  Transform Sentiment into Success
+                                  Data-Driven Decision Making
                                 </h3>
                                 <p>
-                                  Convert market sentiment into profitable
-                                  trading opportunities with our advanced tools
-                                  to grasp every profitable opportunity.
+                                  Transform data into actionable trading
+                                  insights with real-time market analysis and
+                                  advanced AI algorithms.
                                 </p>
                               </div>
                             </div>
@@ -245,11 +219,9 @@ export default function About() {
                                   Automated Trading Excellence
                                 </h3>
                                 <p>
-                                  {" "}
                                   Achieve superior results with our advanced
-                                  algorithms and automated trading solutions for
-                                  performance optimizations and desirable
-                                  results.
+                                  automated trading solutions designed for
+                                  optimal performance and risk management.
                                 </p>
                               </div>
                             </div>
@@ -269,15 +241,11 @@ export default function About() {
                                 </div>
                               </div>
                               <div className="feature-text text-base">
-                                <h3 className="title">
-                                  {" "}
-                                  Unified AI Assimilation
-                                </h3>
+                                <h3 className="title">AI-Powered Insights</h3>
                                 <p>
-                                  Find the best artificial intelligence trading
-                                  integrated system into your trading strategies
-                                  to make uniformed decisions for making profit
-                                  with AI driven real-time insights.
+                                  Use AI-driven insights to optimize your
+                                  trading strategy and identify profitable
+                                  opportunities across global financial markets.
                                 </p>
                               </div>
                             </div>
@@ -288,7 +256,266 @@ export default function About() {
                   </div>
                 </div>
               </section>
+              <section className="section section-bottom-0">
+                <div className="container">
+                  <div className="section-head">
+                    <div className="row justify-content-center text-center">
+                      <div className="col-xl-8">
+                        <h2 className="title">Our Mission & Vision</h2>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="section-content">
+                    <div className="row g-gs">
+                      <div className="col-lg-6">
+                        <h3 className="h4 text-primary">Mission</h3>
+                        <p>
+                          Our mission is to democratize algorithmic trading by
+                          providing state-of-the-art AI-driven solutions that
+                          enable retail and institutional investors to make
+                          data-driven, automated, and profitable trading
+                          decisions across global financial markets.
+                        </p>
+                      </div>
+                      <div className="col-lg-6">
+                        <h3 className="h4 text-primary">Vision</h3>
+                        <p>
+                          Our vision is to become the leading platform for
+                          AI-driven trading solutions worldwide, delivering
+                          innovative tools that maximize profitability while
+                          maintaining the highest level of integrity and
+                          transparency in every trade.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section className="section section-bottom-0">
+                <div className="container">
+                  <div className="section-head">
+                    <div className="row justify-content-center text-center">
+                      <div className="col-xl-8">
+                        <h2 className="title">Meet Our Team</h2>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="section-content">
+                    <div className="row g-gs">
+                      <div className="col-md-4">
+                        <div className="team-member">
+                          <img
+                            src="/images/team1.jpg"
+                            alt="Team Member"
+                            className="rounded-circle"
+                            style={{ width: "150px", height: "150px" }}
+                          />
+                          <h4 className="mt-3">John Doe</h4>
+                          <p>Founder & CEO</p>
+                        </div>
+                      </div>
+                      <div className="col-md-4">
+                        <div className="team-member">
+                          <img
+                            src="/images/team2.jpg"
+                            alt="Team Member"
+                            className="rounded-circle"
+                            style={{ width: "150px", height: "150px" }}
+                          />
+                          <h4 className="mt-3">Jane Smith</h4>
+                          <p>Lead Data Scientist</p>
+                        </div>
+                      </div>
+                      <div className="col-md-4">
+                        <div className="team-member">
+                          <img
+                            src="/images/team3.jpg"
+                            alt="Team Member"
+                            className="rounded-circle"
+                            style={{ width: "150px", height: "150px" }}
+                          />
+                          <h4 className="mt-3">Alice Johnson</h4>
+                          <p>Head of Trading Algorithms</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section className="section section-bottom-0">
+                <div className="container">
+                  <div className="section-head">
+                    <div className="row justify-content-center text-center">
+                      <div className="col-xl-8">
+                        <h2 className="title">Why Choose Us?</h2>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="section-content">
+                    <div className="row g-gs">
+                      <div className="col-md-6 col-xl-4">
+                        <div className="feature">
+                          <div className="feature-media">
+                            <div className="media media-middle media-xl text-bg-info-soft rounded-pill">
+                              <em className="icon ni ni-check-circle" />
+                            </div>
+                          </div>
+                          <div className="feature-text text-base">
+                            <h3 className="title">Proven Track Record</h3>
+                            <p>
+                              Our algorithms have consistently outperformed
+                              market benchmarks, providing profitable results.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-6 col-xl-4">
+                        <div className="feature">
+                          <div className="feature-media">
+                            <div className="media media-middle media-xl text-bg-warning-soft rounded-pill">
+                              <em className="icon ni ni-gear" />
+                            </div>
+                          </div>
+                          <div className="feature-text text-base">
+                            <h3 className="title">
+                              State-of-the-Art Technology
+                            </h3>
+                            <p>
+                              We utilize the latest advancements in AI and
+                              machine learning to provide cutting-edge trading
+                              strategies.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-6 col-xl-4">
+                        <div className="feature">
+                          <div className="feature-media">
+                            <div className="media media-middle media-xl text-bg-primary-soft rounded-pill">
+                              <em className="icon ni ni-security" />
+                            </div>
+                          </div>
+                          <div className="feature-text text-base">
+                            <h3 className="title">Secure & Transparent</h3>
+                            <p>
+                              Our platform ensures complete transparency in all
+                              trades, with robust security protocols to protect
+                              your data.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section className="section section-bottom-0">
+                <div className="container">
+                  <div className="section-head">
+                    <div className="row justify-content-center text-center">
+                      <div className="col-xl-8">
+                        <h2 className="title">Client Testimonials</h2>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="section-content">
+                    <div className="row g-gs">
+                      <div className="col-md-6">
+                        <div className="testimonial">
+                          <p>
+                            "Global Algo Trading has completely transformed the
+                            way we approach the market. Their algorithms have
+                            consistently delivered outstanding results."
+                          </p>
+                          <h4>Mark Thompson</h4>
+                          <p>Investor, Financial Markets</p>
+                        </div>
+                      </div>
+                      <div className="col-md-6">
+                        <div className="testimonial">
+                          <p>
+                            "The platform is user-friendly, and the AI-driven
+                            insights have been invaluable in helping us optimize
+                            our trading strategies."
+                          </p>
+                          <h4>Emily Davis</h4>
+                          <p>Trading Expert</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
 
+              <section className="section section-bottom-0">
+                <div className="container">
+                  <div className="row align-items-center">
+                    <div className="col-lg-6">
+                      <div className="image-container">
+                        <img
+                          src="/images/trading-contact.jpg"
+                          alt="Contact Us"
+                          className="img-fluid"
+                          style={{ borderRadius: "8px" }}
+                        />
+                      </div>
+                    </div>
+
+                    <div className="col-lg-6">
+                      <div className="section-head">
+                        <h2 className="title">Get in Touch</h2>
+                        <p>
+                          Have any questions or inquiries? Feel free to reach
+                          out to us!
+                        </p>
+                      </div>
+                      <form action="/submit-form" method="POST">
+                        <div className="row g-gs">
+                          <div className="col-md-6">
+                            <input
+                              type="text"
+                              name="name"
+                              className="form-control"
+                              placeholder="Your Name"
+                              required
+                            />
+                          </div>
+                          <div className="col-md-6">
+                            <input
+                              type="email"
+                              name="email"
+                              className="form-control"
+                              placeholder="Your Email"
+                              required
+                            />
+                          </div>
+                        </div>
+                        <div className="row g-gs mt-3">
+                          <div className="col-12">
+                            <textarea
+                              name="message"
+                              className="form-control"
+                              rows="4"
+                              placeholder="Your Message"
+                              required
+                            ></textarea>
+                          </div>
+                        </div>
+                        <div className="row justify-content-center mt-4">
+                          <div className="col-md-4">
+                            <button
+                              type="submit"
+                              className="cta-button inline-block"
+                            >
+                              Contact Us
+                            </button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </section>
               <section className="section section-bottom-0 has-shape">
                 <div className="nk-shape bg-shape-blur-m mt-n3 start-50 top-0 translate-middle-x" />
                 <div className="container">
@@ -301,7 +528,18 @@ export default function About() {
                       </div>
                     </div>
                   </div>
-                  {/* <div className="section-content">
+                </div>
+              </section>
+            </main>
+          </div>
+        </Layout>
+      </main>
+    </RootLayout>
+  );
+}
+
+{
+  /* <div className="section-content">
                     <div className="row g-gs justify-content-center align-items-center">
                       <div className="col-lg-4">
                         <div className="card border-0 shadow-tiny rounded-4">
@@ -376,12 +614,16 @@ export default function About() {
                               has been unparalleled. Their platform offers a
                               seamless trading experience, equipped with
                               advanced features and intuitive interface that
-                              streamlines my trading activities. */}
-                  {/* With Elite Algo Trading, I've seen a significant
+                              streamlines my trading activities. */
+}
+{
+  /* With Elite Algo Trading, I've seen a significant
                         improvement in my trading performance and efficiency. I
                         highly recommend Elite Algo Trading to any trader looking for a
-                        reliable and innovative trading software solution." */}
-                  {/* </p>
+                        reliable and innovative trading software solution." */
+}
+{
+  /* </p>
                             <div className="d-flex pt-3">
                               <div className="media media-lg media-middle media-lg rounded-pill">
                                 <img src="/images/img2.png" alt="" />
@@ -416,23 +658,31 @@ export default function About() {
                               <li>
                                 <em className="icon text-warning ni ni-star-fill fs-5" />
                               </li>
-                            </ul> */}
-                  {/* <h4 className="title mb-3">
+                            </ul> */
+}
+{
+  /* <h4 className="title mb-3">
               Just wanna shout out the whole team for this amazing tool
-            </h4> */}
-                  {/* <p>
+            </h4> */
+}
+{
+  /* <p>
                               Having been a seasoned trader for over 15 years,
                               I've encountered numerous trading software
                               solutions. However, my experience with Elite Algo Trading
                               has been unparalleled. Their platform offers a
                               seamless trading experience, equipped with
                               advanced features and intuitive interface that
-                              streamlines my trading activities. */}
-                  {/* With Elite Algo Trading, I've seen a significant
+                              streamlines my trading activities. */
+}
+{
+  /* With Elite Algo Trading, I've seen a significant
                         improvement in my trading performance and efficiency. I
                         highly recommend Elite Algo Trading to any trader looking for a
-                        reliable and innovative trading software solution */}
-                  {/* </p>
+                        reliable and innovative trading software solution */
+}
+{
+  /* </p>
                             <div className="d-flex pt-3">
                               <div className="media media-lg media-middle media-lg rounded-pill">
                                 <img src="/images/img1.png" alt="" />
@@ -449,13 +699,5 @@ export default function About() {
                         </div>
                       </div>
                     </div>
-                  </div> */}
-                </div>
-              </section>
-            </main>
-          </div>
-        </Layout>
-      </main>
-    </RootLayout>
-  );
+                  </div> */
 }

@@ -1,5 +1,7 @@
 "use client";
-import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
+
+import { useEffect, useState, useRef } from "react";
 import Swal from "sweetalert2";
 import ReCAPTCHA from "react-google-recaptcha";
 import axios from "axios";
@@ -9,6 +11,25 @@ import Header from "@/components/Header";
 import RootLayout from "./layout";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import {
+  FaBullseye,
+  FaAlarmClock,
+  FaInfinity,
+  FaRegClock,
+  FaShieldAlt,
+  FaChartLine,
+  FaRegSmile,
+  FaRegSmileBeam,
+  FaBrain,
+  FaHistory,
+  FaSearchPlus,
+  FaCogs,
+} from "react-icons/fa";
+
+const LottiePlayer = dynamic(
+  () => import("@lottiefiles/react-lottie-player").then((mod) => mod.Player),
+  { ssr: false }
+);
 
 export default function Home() {
   const [txt, setTxt] = useState("");
@@ -17,6 +38,50 @@ export default function Home() {
   const [isDeleting, setIsDeleting] = useState(false);
   const [captchaToken, setCaptchaToken] = useState("");
   const [loading, setloading] = useState(false);
+
+  const cardData = [
+    {
+      id: 1,
+      heading: "Your Ultimate Trading Companion",
+      content: `Global Algo Trading is your go-to advanced
+                algorithmic trading software, built to transform
+                your forex and financial market strategies. With
+                powerful artificial intelligence at its core,
+                our platform offers intuitive tools and
+                real-time insights to help you stay ahead. Gain
+                a competitive advantage with Global Algo
+                Trading's smart recommendations and streamlined
+                user experience.`,
+      lottieAnimation: "/animations/companion.json",
+      image: "/images/companion.jpg",
+    },
+    {
+      id: 2,
+      heading: "Your Lifetime Partner in Trading Success",
+      content: `At Global Algo Trading, we're committed to your
+                long-term success by providing lifetime support
+                to every user. From the moment you get started,
+                our dedicated team is here to guide you through
+                account setup, feature usage, and any technical
+                assistance you need. We ensure you’re never
+                trading alone.`,
+      lottieAnimation: "/animations/lifetime.json",
+      image: "/images/lifetime.jpg",
+    },
+    {
+      id: 3,
+      heading: "Delivering Premium Trading Software",
+      content: `Global Algo Trading is a leading provider of
+                cutting-edge algorithmic trading software,
+                designed to empower traders with smarter
+                strategies and consistent profitability. Our
+                platform combines powerful tools, real-time
+                analytics, and expert support to help you reduce
+                risk and enhance your trading performance.`,
+      lottieAnimation: "/animations/premium.json",
+      image: "/images/premium.jpg",
+    },
+  ];
 
   const handleCaptchaChange = (token) => {
     setCaptchaToken(token);
@@ -31,37 +96,37 @@ export default function Home() {
 
   const faqContentLeft = [
     {
-      question: "What is AI trading?",
+      question: "What is AI-based Global Algo Trading?",
       answer:
-        "AI trading, also known as algorithmic trading or automated trading, refers to the use of artificial intelligence and machine learning algorithms to analyze financial markets, identify trading opportunities, and execute trades automatically without human intervention.",
+        "AI-based global algorithmic trading uses artificial intelligence and machine learning to analyze global financial markets, identify trading opportunities, and automatically execute trades based on predictive models — all with minimal human intervention.",
     },
     {
-      question: "How does Algo trading work?",
+      question: "How does GlobalAlgoTrading work?",
       answer:
-        "Algo trading systems use historical market data to train machine learning models that recognize patterns and trends. These models are then used to make predictions about future market movements and generate trading signals. When certain conditions are met, the AI system executes trades based on predefined algorithms and rules.",
+        "GlobalAlgoTrading connects with major financial markets, leverages AI to analyze real-time and historical data, identifies patterns, and executes trades based on advanced algorithms. The system is designed to optimize decision-making speed, reduce emotional bias, and enhance performance.",
     },
     {
-      question: "What are the advantages of Algo trading?",
+      question: "What are the key benefits of Global Algo Trading?",
       answer:
-        "Algo trading offers several advantages including increased speed and efficiency in executing trades, the ability to process vast amounts of data in real-time, the elimination of human emotions from trading decisions, and the potential for better risk management and improved trading performance.",
+        "GlobalAlgoTrading offers fast execution, 24/7 monitoring, access to global markets, real-time data analysis, and emotion-free decision-making. It improves consistency and helps traders minimize risk while maximizing returns.",
     },
   ];
 
   const faqContentRight = [
     {
-      question: "Is Algo trading suitable for beginners?",
+      question: "Is Global Algo Trading beginner-friendly?",
       answer:
-        "While Algo trading can be powerful, it’s important for beginners to understand the risks involved and have a basic understanding of financial markets and trading principles. Some Algo trading platforms offer user-friendly interfaces and educational resources to help beginners get started.",
+        "Yes. GlobalAlgoTrading is designed for both experienced traders and beginners. We offer an intuitive dashboard, educational resources, and risk-managed strategies to help anyone start trading with confidence.",
     },
     {
-      question: "How do I evaluate the performance of an Algo trading system?",
+      question: "How do I evaluate the performance of your trading system?",
       answer:
-        "The performance of an Algo trading system can be evaluated based on metrics such as profitability, risk-adjusted returns, drawdowns, win rate, and consistency of performance over time. It’s also important to consider factors such as transparency, reliability, and the track record of the Algo system provider.",
+        "We provide transparent metrics like win rate, average returns, drawdown levels, and backtested results. You can monitor your strategy’s performance in real-time and analyze historical performance via your dashboard.",
     },
     {
-      question: "Can I customize the parameters of an Algo trading system?",
+      question: "Can I customize my trading strategy?",
       answer:
-        "Yes, many Algo trading platforms allow users to customize parameters such as risk tolerance, position sizing, trading frequency, and specific trading rules to align with their individual preferences and investment goals.",
+        "Absolutely. Our platform allows you to configure risk tolerance, trade frequency, asset focus (stocks, forex, crypto), and more — giving you full control while our AI handles execution.",
     },
   ];
 
@@ -96,309 +161,97 @@ export default function Home() {
             <div className="nk-shape bg-shape-border-c mt-12 ms-n40p start-50 translate-middle-x" />
             <Header />
           </header>
-          <div className="relative">
-            <div
-              className=" top-0 left-0 "
-              style={{ position: "absolute", zIndex: "0", height: "100%" }}
-            >
-              <img
-                src={"/images/background.jpg"}
-                className="w-full "
-                alt="trading"
-              />
-            </div>
-            <div
-              className="nk-hero pt-4 pt-lg-4 pt-xl-4 pb-xl-4"
-              style={{ zIndex: "1", position: "relative" }}
-              data-aos="fade-up" // AOS fade-up effect for hero section
-            >
-              <div className="container">
-                <div className="row g-gs align-items-center justify-content-center justify-content-xl-between flex-xl-row-reverse text-center text-xl-start">
-                  <div className="col-xl-6 col-xxl-5 col-lg-6 col-md-12 col-sm-12">
-                    <div
-                      className="p-2 rounded-3 bg-gradient-primary"
-                      data-aos="zoom-in" // AOS zoom-in effect for form section
-                    >
-                      <div className="card border-0 shadow-sm rounded-4">
-                        <div className="card-body">
-                          <form
-                            id="enquiry"
-                            onSubmit={async (e) => {
-                              e.preventDefault();
-
-                              if (values?.phone?.length < 10) {
-                                Swal.fire({
-                                  title: "Error",
-                                  text: "Phone number should be at least 10 characters",
-                                  icon: "error",
-                                });
-                                return;
-                              }
-
-                              const currentUrl = window?.location?.href;
-                              let updatedUrl;
-
-                              if (
-                                currentUrl &&
-                                (currentUrl.startsWith("http://") ||
-                                  currentUrl.startsWith("https://"))
-                              ) {
-                                updatedUrl = currentUrl.replace(
-                                  /^(https?:\/\/)/,
-                                  "www."
-                                );
-                              } else {
-                                console.log(currentUrl);
-                              }
-
-                              try {
-                                setloading(true);
-
-                                const formData = {
-                                  name: values.name,
-                                  email: values.email,
-                                  phone: values?.phone,
-                                  referredBy: values?.referralId,
-                                  createdBy: "6738bcd9c9afe54cf6b6d7b6", // Adding Referral ID
-                                  organization: "6738bcd9c9afe54cf6b6d7b6", // Organization ID
-                                  domain: updatedUrl.split("/")[0],
-                                };
-                                const res = await axios.post(
-                                  "https://crm-backend-8w9h.onrender.com/api/leads/register",
-                                  formData,
-                                  {
-                                    headers: {
-                                      "Content-Type": "application/json",
-                                      "x-api-secret": "my_secret", // Add your API secret here
-                                    },
-                                  }
-                                );
-
-                                if (res?.data?.status) {
-                                  setloading(false);
-                                  Swal.fire({
-                                    title: "Success",
-                                    text: res?.data?.message,
-                                    icon: "success",
-                                  }).then((result) => {
-                                    if (result.isConfirmed) {
-                                      window.location.reload();
-                                    }
-                                  });
-                                }
-                              } catch (error) {
-                                if (error?.response?.data?.message) {
-                                  Swal.fire({
-                                    title: "Error",
-                                    text: error?.response?.data?.message,
-                                    icon: "error",
-                                  });
-                                  // setTimeout(() => {
-                                  //   window.location.reload();
-                                  // }, 2000);
-                                }
-                                if (error?.response?.data?.errors?.email) {
-                                  Swal.fire({
-                                    title: "Error",
-                                    text: error?.response?.data?.errors
-                                      ?.email[0],
-                                    icon: "error",
-                                  });
-                                }
-                                if (error?.response?.data?.errors?.phone) {
-                                  Swal.fire({
-                                    title: "Error",
-                                    text: error?.response?.data?.errors
-                                      ?.phone[0],
-                                    icon: "error",
-                                  });
-                                }
-                                setloading(false);
-                              }
-                              setloading(false);
-                            }}
-                          >
-                            <div className="row g-4">
-                              <div className="col-12">
-                                <div className="form-group">
-                                  <h3 className="text-dark">
-                                    Algo Trading Software
-                                  </h3>
-                                </div>
-                              </div>
-                              <div className="col-12">
-                                <div className="form-group text-start">
-                                  <label
-                                    className="form-label"
-                                    htmlFor="yourname"
-                                  >
-                                    Your Name
-                                  </label>
-                                  <div className="form-control-wrap">
-                                    <input
-                                      type="text"
-                                      name="name"
-                                      className="form-control form-control-lg"
-                                      placeholder="Enter your name"
-                                      required
-                                      value={values?.name}
-                                      onChange={(e) => {
-                                        const inputValue = e.target.value;
-                                        const sanitizedValue =
-                                          inputValue.replace(/[^a-zA-Z ]/g, "");
-                                        setValues((prev) => ({
-                                          ...prev,
-                                          name: sanitizedValue,
-                                        }));
-                                      }}
-                                    />
-                                  </div>
-                                </div>
-                              </div>
-                              <div className="col-12">
-                                <div className="form-group text-start">
-                                  <label
-                                    className="form-label"
-                                    htmlFor="youremail"
-                                  >
-                                    Your Email
-                                  </label>
-                                  <div className="form-control-wrap">
-                                    <input
-                                      type="email"
-                                      name="email"
-                                      className="form-control form-control-lg"
-                                      placeholder="Enter email id"
-                                      required
-                                      value={values?.email}
-                                      onChange={(e) =>
-                                        setValues((prev) => ({
-                                          ...prev,
-                                          email: e.target.value,
-                                        }))
-                                      }
-                                    />
-                                  </div>
-                                </div>
-                              </div>
-                              <div className="col-12">
-                                <div className="form-group text-start">
-                                  <label
-                                    className="form-label"
-                                    htmlFor="contactnumber"
-                                  >
-                                    Contact Number
-                                  </label>
-                                  <div className="form-control-wrap">
-                                    <input
-                                      type="text"
-                                      name="phone"
-                                      className="form-control form-control-lg"
-                                      placeholder="Enter phone number"
-                                      required
-                                      value={values?.phone}
-                                      onChange={(e) => {
-                                        const inputValue = e.target.value;
-                                        const sanitizedValue =
-                                          inputValue.replace(/[^0-9]/g, "");
-                                        const finalValue = sanitizedValue.slice(
-                                          0,
-                                          15
-                                        );
-                                        setValues((prev) => ({
-                                          ...prev,
-                                          phone: finalValue,
-                                        }));
-                                      }}
-                                      min={10}
-                                      max={15}
-                                    />
-                                  </div>
-                                </div>
-                              </div>
-
-                              {/* Referral ID Field */}
-                              <div className="col-12">
-                                <div className="form-group text-start">
-                                  <label
-                                    className="form-label"
-                                    htmlFor="referralId"
-                                  >
-                                    Referral ID
-                                  </label>
-                                  <div className="form-control-wrap">
-                                    <input
-                                      type="text"
-                                      name="referralId"
-                                      className="form-control form-control-lg"
-                                      placeholder="Enter referral ID"
-                                      value={values?.referralId}
-                                      onChange={(e) =>
-                                        setValues((prev) => ({
-                                          ...prev,
-                                          referralId: e.target.value,
-                                        }))
-                                      }
-                                    />
-                                  </div>
-                                </div>
-                              </div>
-
-                              <button className="btn-anim" type="submit">
-                                {loading ? (
-                                  <CircularProgress
-                                    size={21}
-                                    style={{ color: "white" }}
-                                  />
-                                ) : (
-                                  "Download"
-                                )}
-                              </button>
-                            </div>
-                          </form>
-                        </div>
-                      </div>
-                    </div>
+          <div
+            className="nk-hero"
+            style={{
+              backgroundImage: "url('/images/trade4.webp')",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              position: "relative",
+              zIndex: 1,
+              paddingTop: "40px",
+              paddingBottom: "40px",
+            }}
+            data-aos="fade-up"
+          >
+            <div className="container mx-auto px-4">
+              <div className="flex flex-col xl:flex-row items-center justify-between gap-2">
+                {/* Left Content */}
+                <div className="w-full xl:w-1/2">
+                  <div className="verified-badge mb-3">
+                    <img
+                      src="https://cdn.prod.website-files.com/667bb1998f30b0a6e45b1e26/667bf1cfd046d39798d6b0e4_tick.svg"
+                      alt="Verified"
+                    />
+                    <p>Empowering Next-Gen Traders</p>
                   </div>
-                  <div
-                    className="col-xxl-7 col-xl-6 col-lg-6 col-md-12 col-sm-12"
-                    data-aos="fade-left" // AOS fade-left effect for hero content
+                  <h1
+                    className="text-4xl font-bold mb-2 leading-tight"
+                    style={{
+                      backgroundImage:
+                        "linear-gradient(to right, #065f46, #047857, #059669)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                    }}
                   >
-                    <div className="nk-hero-content">
-                      <h1
-                        className="title- mb-3 mb-lg-4 display-5"
-                        style={{ color: "#55b59e" }}
-                      >
-                        Revolutionize Your Trading with
-                        <br />
-                        <span className="text-gradient-primary">
-                          Elite Automation
-                        </span>
-                      </h1>
-                      <p className="color-text">
-                        Elevate your Forex trading in India with the power of AI
-                        and algorithmic strategies from Elitetrading Algo. Our
-                        innovative platform is designed to optimize your trading
-                        tactics and enhance market outcomes. Recognized with
-                        multiple awards for excellence in both futures and forex
-                        trading, we provide you with cutting-edge tools to drive
-                        consistent business growth. Join Elite Algo Trading
-                        today and take your trading experience to new heights of
-                        success.
-                      </p>
-                    </div>
+                    Global, Intelligent
+                  </h1>
+                  <h1 className="text-4xl font-bold text-green mb-2 leading-tight">
+                    Automated &
+                  </h1>
+                  <h1
+                    className="text-4xl font-bold mb-4 leading-tight"
+                    style={{
+                      backgroundImage:
+                        "linear-gradient(to right, #86efac, #4ade80, #22c55e)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                    }}
+                  >
+                    Seamless Trading
+                  </h1>
+                  <p className="text-gray-600 text-base mb-6">
+                    Unlock the power of AI-driven algorithms to automate your
+                    trading strategies with precision. Built for global markets,
+                    no coding required.
+                  </p>
+                  <a href="#" className="cta-button inline-block">
+                    Get Started
+                  </a>
+                </div>
+
+                {/* Right Video */}
+                <div className="w-full xl:w-1/2">
+                  <div
+                    className="rounded-lg overflow-hidden"
+                    style={{
+                      width: "100%",
+                      maxHeight: "100%",
+                    }}
+                  >
+                    <video
+                      id="homeVideo"
+                      poster="https://webflowbackend.utradealgos.com/api/uploads/utrade-ai-assistant-thumbnail.jpg"
+                      src="https://webflowbackend.utradealgos.com/api/uploads/uTrade_AI_Assistant_FF.mp4"
+                      controls
+                      loop
+                      style={{
+                        borderRadius: "12px",
+                        width: "100%",
+                        height: "100%", // Allow video to grow naturally
+                        objectFit: "cover",
+                        marginTop: "50px", // Add margin at the bottom
+                      }}
+                    />
                   </div>
                 </div>
               </div>
             </div>
           </div>
-
           <main className="nk-pages">
             <div className="container">
-              <div
-                className="section-content"
-                data-aos="fade-up" // AOS fade-up effect for service cards section
-              >
+              <div className="section-content" data-aos="fade-up">
                 <div className="row text-center g-gs justify-content-center">
                   <div className="col-md-6 col-xl-4">
                     <div className="pt-6 h-100">
@@ -406,26 +259,35 @@ export default function Home() {
                         className="card h-100 rounded-4 border-0 shadow-sm"
                         data-aos="fade-up"
                       >
-                        <div className="card-body">
+                        <div
+                          className="card-body"
+                          style={{
+                            border: "1px solid #10b981", // Medium gray border
+                            borderRadius: "8px", // Optional: soft rounded corners
+                            padding: "16px", // Optional: inner spacing
+                          }}
+                        >
                           <div className="feature">
-                            <div className="feature-media mt-n8 mb-3">
-                              <div className="media media-3xl media-middle media-border text-bg-primary-soft-outline rounded-4">
-                                <em className="icon ni ni-speed" />
-                              </div>
-                            </div>
                             <div className="feature-text">
+                              <LottiePlayer
+                                autoplay
+                                loop
+                                src="/animations/Animation - 1746624832702.json"
+                                style={{ width: "160px", height: "180px" }}
+                              />
                               <h4 className="title">
                                 Your Ultimate Trading Companion
                               </h4>
                               <p>
-                                Elite Algo Trading is the ultimate advanced
-                                algorithm trading software to elevate your forex
-                                market strategy and results. Our artificial
-                                intelligence trading software is designed to
-                                give you a competitive edge in today’s market
-                                with an intuitive interface and advanced AI
-                                algorithms, Elite Algo Trading offers real-time
-                                insights and actionable recommendations.
+                                Global Algo Trading is your go-to advanced
+                                algorithmic trading software, built to transform
+                                your forex and financial market strategies. With
+                                powerful artificial intelligence at its core,
+                                our platform offers intuitive tools and
+                                real-time insights to help you stay ahead. Gain
+                                a competitive advantage with Global Algo
+                                Trading's smart recommendations and streamlined
+                                user experience.
                               </p>
                             </div>
                           </div>
@@ -437,25 +299,33 @@ export default function Home() {
                   <div className="col-md-6 col-xl-4" data-aos="fade-right">
                     <div className="pt-6 h-100">
                       <div className="card h-100 rounded-4 border-0 shadow-sm">
-                        <div className="card-body">
+                        <div
+                          className="card-body"
+                          style={{
+                            border: "1px solid #10b981", // Medium gray border
+                            borderRadius: "8px", // Optional: soft rounded corners
+                            padding: "16px", // Optional: inner spacing
+                          }}
+                        >
                           <div className="feature">
-                            <div className="feature-media mt-n8 mb-3">
-                              <div className="media media-3xl media-middle media-border text-bg-info-soft-outline rounded-4">
-                                <em className="icon ni ni-edit" />
-                              </div>
-                            </div>
                             <div className="feature-text">
+                              <LottiePlayer
+                                autoplay
+                                loop
+                                src="/animations/Animation - 1746625002707.json"
+                                style={{ width: "160px", height: "180px" }}
+                              />
                               <h4 className="title">
                                 Your Lifetime Partner in Trading Success
                               </h4>
                               <p>
-                                At Elite Algo Trading, we are dedicated to
-                                ensuring you long-term success by offering
-                                lifetime support to all our users. From the
-                                moment you join us, our expert team is here to
-                                help you with setting up your account,
-                                understanding our features, and resolving any
-                                issues.
+                                At Global Algo Trading, we're committed to your
+                                long-term success by providing lifetime support
+                                to every user. From the moment you get started,
+                                our dedicated team is here to guide you through
+                                account setup, feature usage, and any technical
+                                assistance you need. We ensure you’re never
+                                trading alone.
                               </p>
                             </div>
                           </div>
@@ -467,25 +337,33 @@ export default function Home() {
                   <div className="col-md-6 col-xl-4" data-aos="fade-left">
                     <div className="pt-6 h-100">
                       <div className="card h-100 rounded-4 border-0 shadow-sm">
-                        <div className="card-body">
+                        <div
+                          className="card-body"
+                          style={{
+                            border: "1px solid #10b981", // Medium gray border
+                            borderRadius: "8px", // Optional: soft rounded corners
+                            padding: "16px", // Optional: inner spacing
+                          }}
+                        >
                           <div className="feature">
-                            <div className="feature-media mt-n8 mb-3">
-                              <div className="media media-3xl media-middle media-border text-bg-blue-soft-outline rounded-4">
-                                <em className="icon ni ni-chat-msg" />
-                              </div>
-                            </div>
                             <div className="feature-text">
+                              <LottiePlayer
+                                autoplay
+                                loop
+                                src="/animations/Animation - 1746624925424.json"
+                                style={{ width: "160px", height: "180px" }}
+                              />
                               <h4 className="title">
                                 Delivering Premium Trading Software
                               </h4>
                               <p>
-                                Elite Algo Trading is the best algo trading app
-                                in India, where we deliver advanced trading
-                                software that is designed to help you trade
-                                smarter and stay profitable. Our platform offers
-                                the most advanced tools and features, coupled
-                                with expert guidance to minimize losses and
-                                maximize gains.
+                                Global Algo Trading is a leading provider of
+                                cutting-edge algorithmic trading software,
+                                designed to empower traders with smarter
+                                strategies and consistent profitability. Our
+                                platform combines powerful tools, real-time
+                                analytics, and expert support to help you reduce
+                                risk and enhance your trading performance.
                               </p>
                             </div>
                           </div>
@@ -518,22 +396,36 @@ export default function Home() {
                         href="usecase-details.html"
                         className="card card-hover-translate rounded-4 border-0 shadow-tiny h-100"
                       >
-                        <div className="card-body">
+                        <div
+                          className="card-body"
+                          style={{
+                            background:
+                              "linear-gradient(135deg, rgba(255, 99, 132, 0.25), rgba(255, 99, 132, 0.10))",
+                            borderRadius: "16px",
+                          }}
+                        >
                           <div className="feature">
                             <div className="feature-media">
-                              <div className="media media-middle media-xl text-bg-success-soft rounded-pill">
-                                <em className="icon ni ni-globe" />
-                              </div>
+                              <LottiePlayer
+                                autoplay
+                                loop
+                                src="/animations/Animation - 1746623321216.json"
+                                style={{ width: "160px", height: "120px" }}
+                              />
                             </div>
                             <div className="feature-text text-base">
-                              <h3 className="title">
+                              <h3
+                                className="title"
+                                style={{ fontWeight: "bold" }}
+                              >
                                 Custom Algorithmic Strategies
                               </h3>
                               <p>
-                                Tailored to suit your trading goals, our expert
-                                team helps develop customized strategies to
-                                align with your risk profile and investment
-                                targets.
+                                At Global Algo Trading, we craft personalized
+                                algorithmic strategies designed to align with
+                                your unique trading goals, risk appetite, and
+                                investment objectives—giving you a strategic
+                                edge in dynamic markets.
                               </p>
                             </div>
                           </div>
@@ -550,22 +442,37 @@ export default function Home() {
                         href="usecase-details.html"
                         className="card card-hover-translate rounded-4 border-0 shadow-tiny h-100"
                       >
-                        <div className="card-body">
+                        <div
+                          className="card-body"
+                          style={{
+                            background:
+                              "linear-gradient(135deg, rgba(255, 99, 132, 0.25), rgba(255, 99, 132, 0.10))",
+                            borderRadius: "16px",
+                          }}
+                        >
                           <div className="feature">
                             <div className="feature-media">
-                              <div className="media media-middle media-xl text-bg-info-soft rounded-pill">
-                                <em className="icon ni ni-flag" />
-                              </div>
+                              <LottiePlayer
+                                autoplay
+                                loop
+                                src="/animations/Animation - 1746687412700.json"
+                                style={{ width: "160px", height: "120px" }}
+                              />
                             </div>
+                            <div className="feature-text text-base"></div>
                             <div className="feature-text text-base">
-                              <h3 className="title">
+                              <h3
+                                className="title"
+                                style={{ fontWeight: "bold" }}
+                              >
                                 Automated Trade Execution
                               </h3>
                               <p>
-                                Seamlessly execute trades without manual
-                                intervention. Our algorithms work faster than
-                                human traders, ensuring you can capitalize on
-                                market opportunities instantly.
+                                Experience seamless, automated trade execution
+                                with Global Algo Trading. Our advanced
+                                algorithms execute trades faster than human
+                                traders, ensuring that you can instantly
+                                capitalize on profitable market opportunities.
                               </p>
                             </div>
                           </div>
@@ -582,22 +489,36 @@ export default function Home() {
                         href="usecase-details.html"
                         className="card card-hover-translate rounded-4 border-0 shadow-tiny h-100"
                       >
-                        <div className="card-body">
+                        <div
+                          className="card-body"
+                          style={{
+                            background:
+                              "linear-gradient(135deg, rgba(255, 99, 132, 0.25), rgba(255, 99, 132, 0.10))",
+                            borderRadius: "16px",
+                          }}
+                        >
                           <div className="feature">
                             <div className="feature-media">
-                              <div className="media media-middle media-xl text-bg-primary-soft rounded-pill">
-                                <em className="icon ni ni-edit" />
-                              </div>
+                              <LottiePlayer
+                                autoplay
+                                loop
+                                src="/animations/Animation - 1746687025804.json"
+                                style={{ width: "160px", height: "120px" }}
+                              />
                             </div>
                             <div className="feature-text text-base">
-                              <h3 className="title">
+                              <h3
+                                className="title"
+                                style={{ fontWeight: "bold" }}
+                              >
                                 Performance Analytics and Optimization
                               </h3>
                               <p>
                                 Track, analyze, and optimize your trading
-                                strategies. Our platform provides in-depth
-                                performance reports, allowing you to adjust your
-                                tactics for continuous improvement.
+                                strategies with Global Algo Trading. Our
+                                platform provides detailed performance reports,
+                                empowering you to refine your tactics for
+                                sustained success and continuous growth.
                               </p>
                             </div>
                           </div>
@@ -614,20 +535,36 @@ export default function Home() {
                         href="usecase-details.html"
                         className="card card-hover-translate rounded-4 border-0 shadow-tiny h-100"
                       >
-                        <div className="card-body">
+                        <div
+                          className="card-body"
+                          style={{
+                            background:
+                              "linear-gradient(135deg, rgba(255, 99, 132, 0.25), rgba(255, 99, 132, 0.10))",
+                            borderRadius: "16px",
+                          }}
+                        >
                           <div className="feature">
                             <div className="feature-media">
-                              <div className="media media-middle media-xl text-bg-purple-soft rounded-pill">
-                                <em className="icon ni ni-percent" />
-                              </div>
+                              <LottiePlayer
+                                autoplay
+                                loop
+                                src="/animations/Animation - 1746687983841.json"
+                                style={{ width: "160px", height: "120px" }}
+                              />
                             </div>
                             <div className="feature-text text-base">
-                              <h3 className="title">Risk Management Tools</h3>
+                              <h3
+                                className="title"
+                                style={{ fontWeight: "bold" }}
+                              >
+                                Risk Management Tools
+                              </h3>
                               <p>
-                                Built-in risk management features allow you to
-                                control your trading exposure with tools like
-                                automated stop-loss orders, take-profit
-                                strategies, and more.
+                                Built-in risk management features at Global Algo
+                                Trading empower you to control your trading
+                                exposure. With tools like automated stop-loss
+                                orders, take-profit strategies, and more, we
+                                ensure that you can trade with peace of mind.
                               </p>
                             </div>
                           </div>
@@ -638,10 +575,12 @@ export default function Home() {
                 </div>
               </div>
             </section>
-
             <section
-              className="section section-lg section-bottom-0 has-shape"
+              className="section section-lg section-bottom-0 has-shape mt-10 mb-10"
               data-aos="fade-up"
+              style={{
+                backgroundColor: "#ebf8ff", // Light off-white gray
+              }}
             >
               <div className="container">
                 <h3 className="text-center py-4" data-aos="zoom-in">
@@ -649,145 +588,417 @@ export default function Home() {
                 </h3>
                 <div className="row g-gs w-full w-md-[70%] mx-auto">
                   <div className="col-lg-6" data-aos="fade-right">
-                    <div className="card">
-                      <div className="card-body">
+                    <div
+                      className="card"
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        height: "100%",
+                        borderRadius: "8px",
+                        boxShadow: "4px 4px 8px rgba(16, 185, 129, 0.3)", // Greenish bottom-right shadow
+                      }}
+                    >
+                      <div className="card-body" style={{ flexGrow: 1 }}>
+                        {/* Image Section */}
                         <div
                           style={{
                             display: "flex",
                             justifyContent: "center",
                             alignItems: "center",
+                            marginBottom: "16px",
                           }}
                         >
                           <img
-                            src="/images/forex.jpg"
-                            className="w-full rounded"
-                            style={{ height: "200px" }}
+                            src="/images/currency.jpg"
+                            className="w-full rounded-lg shadow-lg"
+                            style={{
+                              height: "300px", // Fixed height for all images
+                              objectFit: "cover", // Ensures the image covers the container
+                            }}
                           />
                         </div>
-                        <h5 className="text-black text-center my-4">
-                          Currency software
+
+                        {/* Title Section */}
+                        <h5
+                          className="text-black text-center my-4"
+                          style={{
+                            fontSize: "1.25rem", // Larger font size for the title
+                            fontWeight: "bold", // Bold title
+                            color: "#333", // Slightly darker text color
+                            letterSpacing: "0.5px", // Slightly spaced letters
+                          }}
+                        >
+                          Currency Software
                         </h5>
-                        <p className="card-text">
-                          Gain the edge in currency trading with our
-                          state-of-the-art software, designed for smart, swift,
-                          and strategic trading.
+
+                        {/* Paragraph Text Section */}
+                        <p
+                          className="card-text"
+                          style={{
+                            color: "#555", // Lighter gray for text for better readability
+                            fontSize: "1rem", // Standard font size for text
+                            lineHeight: "1.6", // Increase line height for better readability
+                            marginBottom: "16px", // Space below the paragraph
+                          }}
+                        >
+                          Gain a competitive edge in currency trading with
+                          Global Algo Trading’s state-of-the-art software, built
+                          for smart, swift, and strategic market decisions.
                         </p>
+
+                        {/* Button Section */}
+                        <div
+                          className="text-center"
+                          style={{
+                            marginTop: "16px",
+                            transition: "transform 0.3s ease-in-out", // Smooth hover transition
+                          }}
+                        >
+                          <a
+                            href="#"
+                            className="cta-button inline-block bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700"
+                            style={{
+                              textDecoration: "none",
+                              fontSize: "1rem",
+                              fontWeight: "600",
+                            }}
+                          >
+                            Learn More
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
+
+                  {/* Repeat for other cards */}
                   <div className="col-lg-6" data-aos="fade-left">
-                    <div className="card">
-                      <div className="card-body">
+                    <div
+                      className="card"
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        height: "100%",
+                        borderRadius: "8px",
+                        boxShadow: "4px 4px 8px rgba(16, 185, 129, 0.3)", // Greenish bottom-right shadow
+                      }}
+                    >
+                      <div className="card-body" style={{ flexGrow: 1 }}>
                         <div
                           style={{
                             display: "flex",
                             justifyContent: "center",
                             alignItems: "center",
+                            marginBottom: "16px",
                           }}
                         >
                           <img
-                            src="/images/CRYPTO_IMAGE.jpg"
-                            className="w-full rounded"
-                            style={{ height: "200px" }}
+                            src="/images/crypto.jpg"
+                            className="w-full rounded-lg shadow-lg"
+                            style={{
+                              height: "300px",
+                              width: "100%",
+                              objectFit: "cover",
+                            }}
                           />
                         </div>
-                        <h5 className="text-black text-center my-4">
-                          Cryptography software
+
+                        <h5
+                          className="text-black text-center my-4 text-lg sm:text-xl md:text-2xl"
+                          style={{
+                            fontWeight: "bold",
+                            color: "#333",
+                            letterSpacing: "0.5px",
+                          }}
+                        >
+                          Cryptography Software
                         </h5>
-                        <p className="card-text">
-                          Seize the future of finance with our innovative crypto
-                          trading software, designed for seamless transactions
-                          and real-time market insights." Indian Market Trading
-                          Software Empower your trading with our intuitive
-                          software—where data meets opportunity in the Indian
-                          market."
+
+                        <p
+                          className="card-text text-sm sm:text-base md:text-lg"
+                          style={{
+                            color: "#555",
+                            lineHeight: "1.6",
+                            marginBottom: "16px",
+                          }}
+                        >
+                          Seize the future of finance with Global Algo Trading’s
+                          innovative crypto trading software, built for seamless
+                          transactions and real-time market insights.
+                          <strong>Indian Market Trading Software:</strong>{" "}
+                          Empower your trading with our intuitive software—where
+                          data meets opportunity in the Indian market.
                         </p>
+
+                        <div
+                          className="text-center"
+                          style={{
+                            marginTop: "16px",
+                            transition: "transform 0.3s ease-in-out",
+                          }}
+                        >
+                          <a
+                            href="#"
+                            className="cta-button inline-block bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 sm:px-8 sm:py-3"
+                            style={{
+                              textDecoration: "none",
+                              fontSize: "1rem",
+                              fontWeight: "600",
+                            }}
+                          >
+                            Learn More
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
                   <div className="col-lg-6" data-aos="fade-right">
-                    <div className="card">
-                      <div className="card-body">
+                    <div
+                      className="card"
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        height: "100%",
+                        borderRadius: "8px",
+                        boxShadow: "4px 4px 8px rgba(16, 185, 129, 0.3)", // Greenish bottom-right shadow
+                      }}
+                    >
+                      <div className="card-body" style={{ flexGrow: 1 }}>
+                        {/* Image Section */}
                         <div
                           style={{
                             display: "flex",
                             justifyContent: "center",
                             alignItems: "center",
+                            marginBottom: "16px",
                           }}
                         >
                           <img
-                            src="/images/indian.jpg"
-                            className="w-full rounded"
-                            style={{ height: "200px" }}
+                            src="/images/india_stock.jpg"
+                            className="rounded-lg shadow-lg"
+                            style={{
+                              height: "300px", // Fixed height for all images
+                              width: "100%",
+                              objectFit: "cover", // Ensures the image covers the container
+                            }}
                           />
                         </div>
-                        <h5 className="text-black text-center my-4">
-                          Indian market software
+
+                        {/* Title Section */}
+                        <h5
+                          className="text-black text-center my-4 text-lg sm:text-xl md:text-2xl"
+                          style={{
+                            fontWeight: "bold",
+                            color: "#333",
+                            letterSpacing: "0.5px",
+                          }}
+                        >
+                          Indian Market Software
                         </h5>
-                        <p className="card-text">
+
+                        {/* Paragraph Section */}
+                        <p
+                          className="card-text text-sm sm:text-base md:text-lg"
+                          style={{
+                            color: "#555",
+                            lineHeight: "1.6",
+                            marginBottom: "16px",
+                          }}
+                        >
                           Unlock the power of automated trading with advanced
                           algorithms tailored for the Indian market. Maximize
                           your profits and minimize risks with cutting-edge
-                          solutions designed for smarter, faster trades."
+                          solutions designed for smarter, faster trades.
                         </p>
+
+                        {/* Learn More Button Section */}
+                        <div
+                          className="text-center"
+                          style={{
+                            marginTop: "16px",
+                            transition: "transform 0.3s ease-in-out", // Smooth hover transition
+                          }}
+                        >
+                          <a
+                            href="#"
+                            className="cta-button inline-block bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 sm:px-8 sm:py-3"
+                            style={{
+                              textDecoration: "none",
+                              fontSize: "1rem",
+                              fontWeight: "600",
+                            }}
+                          >
+                            Learn More
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
                   <div className="col-lg-6" data-aos="fade-left">
-                    <div className="card">
-                      <div className="card-body">
+                    <div
+                      className="card"
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        height: "100%",
+                        borderRadius: "8px",
+                        boxShadow: "4px 4px 8px rgba(16, 185, 129, 0.3)", // Greenish bottom-right shadow
+                      }}
+                    >
+                      <div className="card-body" style={{ flexGrow: 1 }}>
+                        {/* Image Section */}
                         <div
                           style={{
                             display: "flex",
                             justifyContent: "center",
                             alignItems: "center",
+                            marginBottom: "16px",
                           }}
                         >
                           <img
-                            src="/images/commodity.jpg"
-                            className="w-full rounded"
-                            style={{ height: "200px" }}
+                            src="/images/commodity1.jpg"
+                            className="rounded-lg shadow-lg"
+                            style={{
+                              height: "300px", // Fixed height for all images
+                              width: "100%",
+                              objectFit: "cover", // Ensures the image covers the container
+                            }}
                           />
                         </div>
-                        <h5 className="text-black text-center my-4">
-                          Commodity software
+
+                        {/* Title Section */}
+                        <h5
+                          className="text-black text-center my-4 text-lg sm:text-xl md:text-2xl"
+                          style={{
+                            fontWeight: "bold",
+                            color: "#333",
+                            letterSpacing: "0.5px",
+                          }}
+                        >
+                          Commodity Software
                         </h5>
-                        <p className="card-text">
+
+                        {/* Paragraph Section */}
+                        <p
+                          className="card-text text-sm sm:text-base md:text-lg"
+                          style={{
+                            color: "#555",
+                            lineHeight: "1.6",
+                            marginBottom: "16px",
+                          }}
+                        >
                           Transform your trading strategy with our advanced
                           forex commodity software, engineered for precision and
-                          insight in the COMMODITIES market.
+                          insight in the commodities market.
                         </p>
+
+                        {/* Learn More Button Section */}
+                        <div
+                          className="text-center"
+                          style={{
+                            marginTop: "16px",
+                            transition: "transform 0.3s ease-in-out", // Smooth hover transition
+                          }}
+                        >
+                          <a
+                            href="#"
+                            className="cta-button inline-block bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 sm:px-8 sm:py-3"
+                            style={{
+                              textDecoration: "none",
+                              fontSize: "1rem",
+                              fontWeight: "600",
+                            }}
+                          >
+                            Learn More
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <div className="col-lg-6" data-aos="fade-right">
-                    <div className="card">
-                      <div className="card-body">
+
+                  <div
+                    className="col-lg-6"
+                    data-aos="fade-right"
+                    style={{ marginBottom: "16px" }}
+                  >
+                    <div
+                      className="card"
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        height: "100%",
+                        borderRadius: "8px",
+                        boxShadow: "4px 4px 8px rgba(16, 185, 129, 0.3)", // Greenish bottom-right shadow
+                      }}
+                    >
+                      <div className="card-body" style={{ flexGrow: 1 }}>
                         <div
                           style={{
                             display: "flex",
                             justifyContent: "center",
                             alignItems: "center",
+                            marginBottom: "16px",
                           }}
                         >
                           <img
-                            src="/images/forex.jpg"
-                            className="w-full rounded"
-                            style={{ height: "200px" }}
+                            src="/images/forex1.jpg"
+                            className="rounded-lg shadow-lg"
+                            style={{
+                              height: "300px", // Fixed height for all images
+                              width: "100%",
+                              objectFit: "cover", // Ensures the image covers the container
+                            }}
                           />
                         </div>
-                        <h5 className="text-black text-center my-4">
-                          Forex currency Software
+
+                        {/* Title Section */}
+                        <h5
+                          className="text-black text-center my-4 text-lg sm:text-xl md:text-2xl"
+                          style={{
+                            fontWeight: "bold",
+                            color: "#333",
+                            letterSpacing: "0.5px",
+                          }}
+                        >
+                          Forex Currency Software
                         </h5>
-                        <p className="card-text">
-                          Secure the forex currency trading with our exclusive
+
+                        {/* Paragraph Section */}
+                        <p
+                          className="card-text text-sm sm:text-base md:text-lg"
+                          style={{
+                            color: "#555",
+                            lineHeight: "1.6",
+                            marginBottom: "16px",
+                          }}
+                        >
+                          Secure your forex currency trading with our exclusive
                           Forex AI trading software for fast and secure
                           transactions on web and mobile applications. With our
-                          customized trading app you can view trading charts,
+                          customized trading app, you can view trading charts,
                           trading central opportunities, and get access to risk
-                          management tools and integrated analysis of market
-                          study.
+                          management tools and integrated market analysis.
                         </p>
+
+                        {/* Learn More Button Section */}
+                        <div
+                          className="text-center"
+                          style={{
+                            marginTop: "16px",
+                            transition: "transform 0.3s ease-in-out", // Smooth hover transition
+                          }}
+                        >
+                          <a
+                            href="#"
+                            className="cta-button inline-block bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 sm:px-8 sm:py-3"
+                            style={{
+                              textDecoration: "none",
+                              fontSize: "1rem",
+                              fontWeight: "600",
+                            }}
+                          >
+                            Learn More
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -805,7 +1016,7 @@ export default function Home() {
             >
               <div className="container">
                 <h4 className="text-center py-4" data-aos="zoom-in">
-                  Why Choose Your Company Elite Algo Trading AlgoTrading
+                  Why Choose Global Algo Trading?
                 </h4>
                 <div className="section-content">
                   <div
@@ -814,25 +1025,37 @@ export default function Home() {
                       display: "flex",
                       justifyContent: "center",
                       alignItems: "center",
+                      gap: "30px",
                     }}
                   >
-                    <div className="col-lg-5" data-aos="fade-right">
-                      <div className="card bg-gradient-light border-0 h-100">
+                    {/* Card 1 */}
+                    <div className="col-lg-5" data-aos="flip-left">
+                      <div
+                        className="card border-0 h-100"
+                        style={{
+                          backgroundColor: "#f5fbff",
+                          minHeight: "250px",
+                          borderRadius: "8px",
+                          boxShadow: "4px 4px 12px rgba(100, 149, 237, 0.2)", // cornflower blue shadow
+                        }}
+                      >
                         <div className="card-body p-3 d-flex">
                           <div className="feature feature-inline align-items-center">
                             <div className="feature-text me-auto">
                               <h4 className="title">Precision and Accuracy</h4>
                               <p>
-                                Algo trading uses advanced algorithms to execute
-                                trades with pinpoint accuracy, ensuring you
-                                never miss an opportunity in the fast-paced
-                                market.
+                                Global Algo Trading leverages advanced
+                                algorithms to execute trades with pinpoint
+                                accuracy, ensuring you never miss an opportunity
+                                in the fast-paced market.
                               </p>
                             </div>
-                            <div className="feature-decoration flex-shrink-0">
-                              <img
-                                src="assets/images/1.png"
-                                alt="precision-icon"
+                            <div
+                              className="feature-decoration flex-shrink-0"
+                              data-aos="zoom-in"
+                            >
+                              <FaBullseye
+                                style={{ fontSize: "40px", color: "#007bff" }}
                               />
                             </div>
                           </div>
@@ -840,22 +1063,33 @@ export default function Home() {
                       </div>
                     </div>
 
-                    <div className="col-lg-5" data-aos="fade-left">
-                      <div className="card bg-gradient-light border-0 h-100">
+                    {/* Card 2 */}
+                    <div className="col-lg-5" data-aos="flip-right">
+                      <div
+                        className="card border-0 h-100"
+                        style={{
+                          backgroundColor: "#f5fbff",
+                          minHeight: "250px",
+                          borderRadius: "8px",
+                          boxShadow: "4px 4px 12px rgba(100, 149, 237, 0.2)", // cornflower blue shadow
+                        }}
+                      >
                         <div className="card-body p-3 d-flex">
                           <div className="feature feature-inline align-items-center">
                             <div className="feature-text me-auto">
                               <h4 className="title">24/7 Trading Capability</h4>
                               <p>
-                                Automated systems work round-the-clock, allowing
-                                you to capitalize on market movements even when
-                                you're offline.
+                                With Global Algo Trading, automated systems work
+                                round-the-clock, allowing you to capitalize on
+                                market movements even when you're offline.
                               </p>
                             </div>
-                            <div className="feature-decoration flex-shrink-0">
-                              <img
-                                src="assets/images/1.png"
-                                alt="trading-icon"
+                            <div
+                              className="feature-decoration flex-shrink-0"
+                              data-aos="zoom-in"
+                            >
+                              <FaRegClock
+                                style={{ fontSize: "40px", color: "#007bff" }}
                               />
                             </div>
                           </div>
@@ -863,44 +1097,33 @@ export default function Home() {
                       </div>
                     </div>
 
-                    <div className="col-lg-5" data-aos="fade-right">
-                      <div className="card bg-gradient-light border-0 h-100">
+                    {/* Card 3 */}
+                    <div className="col-lg-5" data-aos="flip-left">
+                      <div
+                        className="card border-0 h-100"
+                        style={{
+                          backgroundColor: "#f5fbff",
+                          minHeight: "250px",
+                          borderRadius: "8px",
+                          boxShadow: "4px 4px 12px rgba(100, 149, 237, 0.2)", // cornflower blue shadow
+                        }}
+                      >
                         <div className="card-body p-3 d-flex">
                           <div className="feature feature-inline align-items-center">
                             <div className="feature-text me-auto">
                               <h4 className="title">Risk Management</h4>
                               <p>
-                                Our algorithms incorporate risk management
-                                strategies, such as stop-loss and take-profit
-                                levels, minimizing potential losses while
-                                maximizing gains.
+                                Our algorithms incorporate risk strategies like
+                                stop-loss and take-profit levels, minimizing
+                                losses while maximizing gains.
                               </p>
                             </div>
-                            <div className="feature-decoration flex-shrink-0">
-                              <img src="assets/images/1.png" alt="risk-icon" />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="col-lg-5" data-aos="fade-left">
-                      <div className="card bg-gradient-light border-0 h-100">
-                        <div className="card-body p-3 d-flex">
-                          <div className="feature feature-inline align-items-center">
-                            <div className="feature-text me-auto">
-                              <h4 className="title">Emotion-Free Trading</h4>
-                              <p>
-                                Eliminate emotional decision-making. Algorithms
-                                follow a set strategy without being influenced
-                                by market sentiment, leading to more consistent
-                                and objective results.
-                              </p>
-                            </div>
-                            <div className="feature-decoration flex-shrink-0">
-                              <img
-                                src="assets/images/1.png"
-                                alt="emotion-free-icon"
+                            <div
+                              className="feature-decoration flex-shrink-0"
+                              data-aos="zoom-in"
+                            >
+                              <FaChartLine
+                                style={{ fontSize: "40px", color: "#007bff" }}
                               />
                             </div>
                           </div>
@@ -908,22 +1131,67 @@ export default function Home() {
                       </div>
                     </div>
 
-                    <div className="col-lg-5" data-aos="fade-right">
-                      <div className="card bg-gradient-light border-0 h-100">
+                    {/* Card 4 */}
+                    <div className="col-lg-5" data-aos="flip-right">
+                      <div
+                        className="card border-0 h-100"
+                        style={{
+                          backgroundColor: "#f5fbff",
+                          minHeight: "250px",
+                          borderRadius: "8px",
+                          boxShadow: "4px 4px 12px rgba(100, 149, 237, 0.2)", // cornflower blue shadow
+                        }}
+                      >
+                        <div className="card-body p-3 d-flex">
+                          <div className="feature feature-inline align-items-center">
+                            <div className="feature-text me-auto">
+                              <h4 className="title">Emotion-Free Trading</h4>
+                              <p>
+                                We eliminate emotional trading by following
+                                predefined strategies, enabling more consistent
+                                and objective results.
+                              </p>
+                            </div>
+                            <div
+                              className="feature-decoration flex-shrink-0"
+                              data-aos="zoom-in"
+                            >
+                              <FaBrain
+                                style={{ fontSize: "40px", color: "#007bff" }}
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Card 5 */}
+                    <div className="col-lg-5" data-aos="flip-left">
+                      <div
+                        className="card border-0 h-100"
+                        style={{
+                          backgroundColor: "#f5fbff",
+                          minHeight: "250px",
+                          borderRadius: "8px",
+                          boxShadow: "4px 4px 12px rgba(100, 149, 237, 0.2)", // cornflower blue shadow
+                        }}
+                      >
                         <div className="card-body p-3 d-flex">
                           <div className="feature feature-inline align-items-center">
                             <div className="feature-text me-auto">
                               <h4 className="title">Backtested Strategies</h4>
                               <p>
-                                Our systems use historical data to test
-                                strategies before implementation, ensuring they
-                                are optimized for market conditions.
+                                We use historical data to rigorously test
+                                strategies before use, optimizing performance
+                                for current market conditions.
                               </p>
                             </div>
-                            <div className="feature-decoration flex-shrink-0">
-                              <img
-                                src="assets/images/1.png"
-                                alt="backtest-icon"
+                            <div
+                              className="feature-decoration flex-shrink-0"
+                              data-aos="zoom-in"
+                            >
+                              <FaCogs
+                                style={{ fontSize: "40px", color: "#007bff" }}
                               />
                             </div>
                           </div>
@@ -1147,7 +1415,7 @@ export default function Home() {
                     >
                       <h2 className="title h3">FREQUENTLY ASKED QUESTIONS</h2>
                       <p>
-                        Contact Elite Algo Trading for expert support on AI and
+                        Contact Global Algo Trading for expert support on AI and
                         algorithmic trading. Reach out for inquiries,
                         assistance, or more information about our innovative
                         trading solutions.
@@ -1240,153 +1508,6 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              {/* <div className="section-content">
-                <div className="row g-gs justify-content-center align-items-center">
-                  <div className="col-lg-4" data-aos="zoom-in">
-                    <div className="card border-0 shadow-tiny rounded-4">
-                      <div className="card-body">
-                        <ul className="list list-row gy-0 g-1 mb-3">
-                          <li>
-                            <em className="icon text-warning ni ni-star-fill fs-5" />
-                          </li>
-                          <li>
-                            <em className="icon text-warning ni ni-star-fill fs-5" />
-                          </li>
-                          <li>
-                            <em className="icon text-warning ni ni-star-fill fs-5" />
-                          </li>
-                          <li>
-                            <em className="icon text-warning ni ni-star-fill fs-5" />
-                          </li>
-                          <li>
-                            <em className="icon text-warning ni ni-star-fill fs-5" />
-                          </li>
-                        </ul>
-                        <p>
-                          Using Elite Algo Trading's forex trading software has
-                          been a game-changer for me. Its consistency in
-                          generating profits has truly surpassed my
-                          expectations. With Elite Algo Trading, I've seen a
-                          significant improvement in my trading performance and
-                          efficiency. I highly recommend Elite Algo Trading to
-                          any trader looking for a reliable and innovative
-                          trading software solution.
-                        </p>
-                        <div className="d-flex pt-3">
-                          <div className="media media-lg media-middle media-lg rounded-pill">
-                            <img src="/images/img3.png" alt="" />
-                          </div>
-                          <div className="media-info ms-3">
-                            <h5 className="mb-1">Danup Dulgacha</h5>
-                            <div className="sub-text">
-                              Area Sales Manager, Medmanor organics Mumbai
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div
-                    className="col-lg-4"
-                    data-aos="zoom-in"
-                    data-aos-delay="100"
-                  >
-                    <div className="card border-0 shadow-tiny rounded-4">
-                      <div className="card-body">
-                        <ul className="list list-row gy-0 g-1 mb-3">
-                          <li>
-                            <em className="icon text-warning ni ni-star-fill fs-5" />
-                          </li>
-                          <li>
-                            <em className="icon text-warning ni ni-star-fill fs-5" />
-                          </li>
-                          <li>
-                            <em className="icon text-warning ni ni-star-fill fs-5" />
-                          </li>
-                          <li>
-                            <em className="icon text-warning ni ni-star-fill fs-5" />
-                          </li>
-                          <li>
-                            <em className="icon text-warning ni ni-star-fill fs-5" />
-                          </li>
-                        </ul>
-                        <p>
-                          Having been a seasoned trader for over 15 years, I've
-                          encountered numerous trading software solutions.
-                          However, my experience with Elite Algo Trading has
-                          been unparalleled. Their platform offers a seamless
-                          trading experience, equipped with advanced features
-                          and an intuitive interface that streamlines my trading
-                          activities.
-                        </p>
-                        <div className="d-flex pt-3">
-                          <div className="media media-lg media-middle media-lg rounded-pill">
-                            <img src="/images/img2.png" alt="" />
-                          </div>
-                          <div className="media-info ms-3">
-                            <h5 className="mb-1">Manohar PR</h5>
-                            <div className="sub-text">
-                              Ex G.M. M/s Mayor Electro Ceramics Pvt Ltd,
-                              Rairangpur, Orissa
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div
-                    className="col-lg-4"
-                    data-aos="zoom-in"
-                    data-aos-delay="200"
-                  >
-                    <div className="card border-0 shadow-tiny rounded-4">
-                      <div className="card-body">
-                        <ul className="list list-row gy-0 g-1 mb-3">
-                          <li>
-                            <em className="icon text-warning ni ni-star-fill fs-5" />
-                          </li>
-                          <li>
-                            <em className="icon text-warning ni ni-star-fill fs-5" />
-                          </li>
-                          <li>
-                            <em className="icon text-warning ni ni-star-fill fs-5" />
-                          </li>
-                          <li>
-                            <em className="icon text-warning ni ni-star-fill fs-5" />
-                          </li>
-                          <li>
-                            <em className="icon text-warning ni ni-star-fill fs-5" />
-                          </li>
-                        </ul>
-                        <p>
-                          Before discovering Elite Algo Trading, my days were
-                          consumed by work, leaving me little time to pursue my
-                          interest in trading. However, since signing up with
-                          Elite Algo Trading, everything has changed. Their
-                          trading software is not only user-friendly but also
-                          incredibly powerful, allowing me to engage in trading
-                          seamlessly despite my busy schedule. What truly sets
-                          them apart though is their exceptional service and
-                          support.
-                        </p>
-                        <div className="d-flex pt-3">
-                          <div className="media media-lg media-middle media-lg rounded-pill">
-                            <img src="/images/img1.png" alt="" />
-                          </div>
-                          <div className="media-info ms-3">
-                            <h5 className="mb-1">Indrajeet Kumar</h5>
-                            <div className="sub-text">
-                              Assistant Manager, Aye Finance Pvt Ltd, New Delhi
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div> */}
             </div>
           </main>
         </div>

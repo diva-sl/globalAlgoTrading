@@ -23,36 +23,6 @@ function Layout({ children }) {
     <div>
       {children}
       <Footer />
-
-      <div className="social-icons">
-        <a
-          href="https://wa.me/919900936011"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div className="icon whatsapp blink-animation">
-            <FaWhatsapp size={"30px"} />
-          </div>
-        </a>
-        <a
-          href="https://www.instagram.com/algotradingelite?igsh=NmpyMWUxbHltNzlk"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div className="icon instagram blink-animation">
-            <FaInstagram size={"30px"} />
-          </div>
-        </a>
-        <a
-          href="https://www.facebook.com/share/1XE6niM7pj/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div className="icon facebook blink-animation">
-            <FaFacebook size={"30px"} />
-          </div>
-        </a>
-      </div>
     </div>
   );
 }

@@ -5,11 +5,29 @@ import Layout from "@/components/Layout";
 import RootLayout from "../layout";
 
 function faqs() {
+  const testimonials = [
+    {
+      feedback:
+        "Global Algo Trading has significantly improved our trading strategy. The automated trading algorithms have increased our efficiency and profitability.",
+      name: "John Doe",
+    },
+    {
+      feedback:
+        "I’ve been using the platform for a few months, and the results are remarkable. The backtesting tools are extremely useful.",
+      name: "Jane Smith",
+    },
+    {
+      feedback:
+        "The customer support is excellent, and the algorithms are simple to implement. Highly recommend for any serious trader.",
+      name: "Michael Lee",
+    },
+  ];
+
   const metaData = {
-    title: "FREQUENTLY ASKED QUESTIONS - Elite Algo Trading",
+    title: "Frequently Asked Questions - Global Algo Trading",
     description:
-      "Find answers to all your queries about Elite Algo Trading & algorithmic trading solutions, market strategies, and support. Explore our FAQ for insights and assistance.",
-    canonical: "https://EliteAlgoTrading.com/faqs",
+      "Explore answers to your questions about Global Algo Trading, algorithmic trading solutions, strategies, and market insights. Get the support you need for successful trading.",
+    canonical: "https://GlobalAlgoTrading.com/faqs",
   };
 
   return (
@@ -33,10 +51,10 @@ function faqs() {
                       <div className="text-center mb-6">
                         <h1 className="title">Frequently Asked Questions</h1>
                         <p>
-                          Find answers to all your queries about Elite Algo
-                          Trading & algorithmic trading solutions, market
-                          strategies, and support. Explore our FAQ for insights
-                          and assistance.
+                          Discover everything you need to know about algorithmic
+                          trading, market strategies, and how Global Algo
+                          Trading can help you optimize your trading approach.
+                          Find answers to our most common questions here.
                         </p>
                       </div>
                       <div className="section-content">
@@ -79,6 +97,141 @@ function faqs() {
                 </div>
               </div>
             </section>
+            <section className="section section-testimonials">
+              <div className="container">
+                <h2 className="title text-center">Success Stories</h2>
+                <div className="testimonials-carousel">
+                  {testimonials.map((testimonial, index) => (
+                    <div className="testimonial-item" key={index}>
+                      <p>{testimonial.feedback}</p>
+                      <p className="customer-name">{testimonial.name}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+            <section className="section section-video">
+              <div className="container text-center">
+                <h2 className="title">How Algorithmic Trading Works</h2>
+                <video controls>
+                  <source src="/videos/how-it-works.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </section>
+            <section className="section section-resources">
+              <div className="container">
+                <h2 className="title text-center">Related Articles</h2>
+                <ul>
+                  <li>
+                    <a href="/blog/understanding-algorithmic-trading">
+                      Understanding Algorithmic Trading
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/blog/how-to-optimize-your-trading-strategy">
+                      How to Optimize Your Trading Strategy
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/blog/the-future-of-algorithmic-trading">
+                      The Future of Algorithmic Trading
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </section>
+            <section className="section section-links-queries">
+              <div className="container">
+                <div className="row">
+                  {/* Left Column: Important Links and Related Queries */}
+                  <div className="col-md-6">
+                    <section className="section section-links">
+                      <h2 className="title">Important Links</h2>
+                      <ul>
+                        <li>
+                          <a href="/terms">Terms & Conditions</a>
+                        </li>
+                        <li>
+                          <a href="/privacy-policy">Privacy Policy</a>
+                        </li>
+                        <li>
+                          <a href="/support">Support Documentation</a>
+                        </li>
+                      </ul>
+                    </section>
+
+                    <section className="section section-related-queries">
+                      <h2 className="title">Related Queries</h2>
+                      <ul>
+                        <li>
+                          <a href="/faq/general">General FAQs</a>
+                        </li>
+                        <li>
+                          <a href="/faq/strategies">Trading Strategies FAQs</a>
+                        </li>
+                        <li>
+                          <a href="/faq/backtesting">Backtesting FAQs</a>
+                        </li>
+                        <li>
+                          <a href="/faq/technical">Technical Support FAQs</a>
+                        </li>
+                      </ul>
+                    </section>
+                  </div>
+
+                  {/* Right Column: Contact Form */}
+                  <div className="col-md-6">
+                    <section className="section section-contact-form">
+                      <h2 className="title text-center">
+                        Have More Questions?
+                      </h2>
+                      <form>
+                        <input
+                          type="text"
+                          placeholder="Your Name"
+                          className="form-control"
+                        />
+                        <input
+                          type="email"
+                          placeholder="Your Email"
+                          className="form-control"
+                        />
+                        <textarea
+                          placeholder="Your Question"
+                          className="form-control"
+                        ></textarea>
+                        <button type="submit" className="btn-submit">
+                          Submit
+                        </button>
+                      </form>
+                    </section>
+                    <section className="section section-social-media">
+                      <div className="container text-center">
+                        <h2 className="title">Follow Us</h2>
+                        <ul className="social-media-links">
+                          <li>
+                            <a href="https://twitter.com/GlobalAlgoTrading">
+                              Twitter
+                            </a>
+                          </li>
+                          <li>
+                            <a href="https://linkedin.com/company/globalalgotrading">
+                              LinkedIn
+                            </a>
+                          </li>
+                          <li>
+                            <a href="https://facebook.com/GlobalAlgoTrading">
+                              Facebook
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </section>
           </main>
         </div>
       </Layout>
@@ -90,52 +243,52 @@ const faqContent = [
   {
     question: "What is algorithmic trading?",
     answer:
-      "Algorithmic trading, or algo trading, refers to using computer algorithms to automatically execute trades in financial markets based on predefined criteria, such as price, volume, and timing. It helps in executing strategies faster and more efficiently than manual trading.",
+      "Algorithmic trading, or algo trading, refers to using automated computer algorithms to execute trades in financial markets based on predefined criteria such as price, volume, timing, and other market data. It aims to make trading more efficient and can improve the speed and accuracy of execution.",
   },
   {
-    question: "How does algorithmic trading work?",
+    question: "How does Global Algo Trading help improve trading strategies?",
     answer:
-      "Algo trading works by creating algorithms that follow a set of rules for buying and selling assets. These rules can be based on factors like price patterns, technical indicators, or market conditions. The algorithm continuously monitors the market and executes orders when specific conditions are met.",
+      "Global Algo Trading offers advanced algorithmic solutions that enhance the execution of trading strategies. By automating trades, we can reduce human error, maximize trading opportunities, and execute strategies faster, ensuring optimal performance even in volatile markets.",
   },
   {
-    question: "What are the benefits of algorithmic trading?",
+    question: "What are the key advantages of using algorithmic trading?",
     answer:
-      "Some of the key benefits include faster trade execution, reduced human error, the ability to process large amounts of data, improved consistency in following a trading strategy, and the ability to backtest strategies using historical data.",
+      "The primary benefits of algorithmic trading include increased speed of execution, enhanced precision, the ability to backtest strategies with historical data, reduced human emotion, and the potential for handling large volumes of data efficiently. Additionally, it enables trading in multiple markets simultaneously.",
   },
   {
-    question: "What types of strategies are used in algorithmic trading?",
+    question: "What trading strategies are employed in algorithmic trading?",
     answer:
-      "Common strategies include market making, statistical arbitrage, trend following, and mean reversion.",
+      "At Global Algo Trading, we utilize a range of strategies such as trend following, statistical arbitrage, market making, mean reversion, and high-frequency trading (HFT). These strategies are tailored to individual market conditions and help in making data-driven decisions.",
   },
   {
-    question: "Do I need programming skills to develop an algorithmic trading strategy?",
+    question: "Do I need programming skills to use algorithmic trading?",
     answer:
-      "Yes, typically some programming knowledge (e.g., Python, C++, or Java) is required to develop custom trading algorithms. However, many platforms provide pre-built strategies that don’t require programming knowledge.",
+      "While having programming knowledge is helpful, it’s not a necessity for most of our clients. Our platform offers pre-built algorithms and strategies that don’t require coding skills. However, advanced traders can customize strategies by using programming languages like Python or R for more control.",
   },
   {
-    question: "What is backtesting?",
+    question: "What is backtesting, and how does it work?",
     answer:
-      "Backtesting is the process of testing a trading strategy using historical market data to evaluate how well the algorithm would have performed in the past. This helps to identify potential flaws before deploying a strategy in live markets.",
+      "Backtesting is the process of testing an algorithmic trading strategy using historical market data. It allows traders to evaluate how the strategy would have performed in the past, giving them confidence before deploying it in real markets. Our platform provides powerful backtesting tools with detailed reports and performance metrics.",
   },
   {
-    question: "What are the risks involved with algorithmic trading?",
+    question: "What are the risks associated with algorithmic trading?",
     answer:
-      "Risks include overfitting, execution risk, market risk, and technology risk.",
+      "The main risks include market risk, overfitting of models, data issues, and technology risks. It's crucial to monitor trading algorithms regularly to ensure they perform as expected. Our platform provides real-time monitoring and alerts to minimize such risks.",
   },
   {
-    question: "How much capital is needed to start algorithmic trading?",
+    question: "How much capital is required to start algorithmic trading?",
     answer:
-      "The amount of capital depends on the type of strategy being used, the broker’s minimum requirements, and the trader's risk tolerance.",
+      "The capital required depends on the strategy being used and the specific markets involved. Some strategies may require a higher minimum capital due to their complexity or risk, while others can be started with a smaller investment. Global Algo Trading helps optimize capital allocation to ensure efficient use of resources.",
   },
   {
     question: "What is high-frequency trading (HFT)?",
     answer:
-      "High-frequency trading is a subset of algorithmic trading that involves executing a large number of orders at extremely fast speeds, often in milliseconds or microseconds.",
+      "High-frequency trading is a subset of algorithmic trading that involves executing a large number of trades at extremely high speeds, often within milliseconds. This strategy is used to exploit small price movements and can be highly profitable in fast-moving markets.",
   },
   {
     question: "What is slippage in algorithmic trading?",
     answer:
-      "Slippage occurs when there’s a difference between the expected price of a trade and the actual price at which the trade is executed.",
+      "Slippage occurs when there is a difference between the expected price of a trade and the actual price at which the trade is executed. It typically happens during periods of high volatility. Our algorithms are designed to minimize slippage through advanced execution strategies.",
   },
 ];
 

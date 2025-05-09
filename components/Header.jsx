@@ -1,28 +1,33 @@
+"use client";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { Modal, Menu, Dropdown, Button } from "antd";
-import { UserOutlined, LogoutOutlined, SettingOutlined } from "@ant-design/icons"; 
-import Login from "./Login"; 
+import {
+  UserOutlined,
+  LogoutOutlined,
+  SettingOutlined,
+} from "@ant-design/icons";
+import Login from "./Login";
+import classNames from "classnames";
 
 function Header() {
   const [show, setShow] = useState(false);
   const [showProducts, setShowProducts] = useState(false);
   const [notTop, setNotTop] = useState(false);
-  const [isLoginModalVisible, setIsLoginModalVisible] = useState(false); 
-  const [isLoggedIn, setIsLoggedIn] = useState(false);  
-  const [isMobile, setIsMobile] = useState(false);  
-  useEffect(() => { 
+  const [isLoginModalVisible, setIsLoginModalVisible] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
     const token = localStorage.getItem("authToken");
     setIsLoggedIn(!!token);
 
     const handleScroll = () => {
-      const scrollTop = window.pageYOffset;
-      const scrollThreshold = 5;
-      setNotTop(scrollTop > scrollThreshold);
+      setNotTop(window.pageYOffset > 5);
     };
 
     const checkIfMobile = () => {
-      setIsMobile(window.innerWidth <= 992);  
+      setIsMobile(window.innerWidth <= 992);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -35,31 +40,8 @@ function Header() {
     };
   }, []);
 
-  const handleProductsHover = (isHovering) => {
-    if (!isMobile) {
-      setShowProducts(isHovering);
-    }
-  };
-
   const toggleProductsMenu = () => {
-    if (isMobile) {
-      setShowProducts(!showProducts);
-    }
-  };
-
-  // Functions to open and close the login modal
-  const showLoginModal = () => {
-    setIsLoginModalVisible(true);
-  };
-
-  const handleLoginCancel = () => {
-    setIsLoginModalVisible(false);
-  };
-
-  const handleLogout = () => {
-    // Clear auth token and update state
-    localStorage.removeItem("authToken");
-    setIsLoggedIn(false);
+    if (isMobile) setShowProducts(!showProducts);
   };
 
   const userMenu = (
@@ -69,7 +51,13 @@ function Header() {
           <SettingOutlined /> Profile
         </Link>
       </Menu.Item>
-      <Menu.Item key="logout" onClick={handleLogout}>
+      <Menu.Item
+        key="logout"
+        onClick={() => {
+          localStorage.removeItem("authToken");
+          setIsLoggedIn(false);
+        }}
+      >
         <LogoutOutlined /> Logout
       </Menu.Item>
     </Menu>
@@ -77,33 +65,41 @@ function Header() {
 
   return (
     <div
-      className={`nk-header-main nk-menu-main will-shrink is-transparent ignore-mask ${
-        notTop && "has-fixed"
-      }`}
+      className={classNames(
+        "nk-header-main",
+        "nk-menu-main",
+        "will-shrink",
+        "is-transparent",
+        "ignore-mask",
+        {
+          "has-fixed": notTop,
+        }
+      )}
     >
       <div className="nk-shape bg-shape-blur-c ms-n20p mt-n20p start-50 translate-middle-x" />
-
       <div className="container">
         <div className="nk-header-wrap">
+          {/* Logo */}
           <div className="nk-header-logo">
             <Link href="/" className="logo-link">
-              <div className="logo-wrap">
-                <img
-                  className="logo-img"
-                  src="/images/logo.png"
-                  alt="Elite Algo Trading"
-                  style={{ width: "200px" }}
-                />
-              </div>
+              <img
+                src="/images/global_logo3.png"
+                alt="Global Algo Trading"
+                style={{ width: "200px" }}
+              />
             </Link>
           </div>
+
+          {/* Toggle Button */}
           <div className="nk-header-toggle" onClick={() => setShow(!show)}>
             <button className="btn btn-light btn-icon header-menu-toggle">
               <em className="icon ni ni-menu" />
             </button>
           </div>
+
+          {/* Navigation Menu */}
           <nav
-            className={`nk-header-menu nk-menu ${show && "show1"}`}
+            className={classNames("nk-header-menu", "nk-menu", { show1: show })}
             style={{ zIndex: 999 }}
           >
             <ul className="nk-menu-list">
@@ -122,28 +118,27 @@ function Header() {
                   <span className="nk-menu-text">Faq's</span>
                 </Link>
               </li>
+
+              {/* Products Dropdown */}
               <li
-                className={`nk-menu-item has-dropdown ${
-                  showProducts && "show-submenu"
-                }`}
-                onMouseEnter={() => handleProductsHover(true)}
-                onMouseLeave={() => handleProductsHover(false)}
+                className={classNames("nk-menu-item", "has-dropdown", {
+                  "show-submenu": showProducts,
+                })}
+                onMouseEnter={() => !isMobile && setShowProducts(true)}
+                onMouseLeave={() => !isMobile && setShowProducts(false)}
                 onClick={toggleProductsMenu}
               >
                 <a href="#" className="nk-menu-link">
                   <span className="nk-menu-text">Products</span>
-                  <em className="icon ni ni-chevron-down"></em>
+                  <em className="icon ni ni-chevron-down" />
                 </a>
                 <ul
-                  className={`nk-menu-dropdown ${
-                    showProducts ? "show-dropdown" : ""
-                  }`}
+                  className={classNames("nk-menu-dropdown", {
+                    "show-dropdown": showProducts,
+                  })}
                 >
                   <li className="nk-menu-item">
-                    <Link
-                      href="/indianmarketsoftware"
-                      className="nk-menu-link"
-                    >
+                    <Link href="/indianmarketsoftware" className="nk-menu-link">
                       <span className="nk-menu-text">
                         Indian Market Software
                       </span>
@@ -160,29 +155,26 @@ function Header() {
                     </Link>
                   </li>
                   <li className="nk-menu-item">
-                    <Link
-                      href="/cryptosoftware"
-                      className="nk-menu-link"
-                    >
+                    <Link href="/cryptosoftware" className="nk-menu-link">
                       <span className="nk-menu-text">Crypto Software</span>
                     </Link>
                   </li>
                   <li className="nk-menu-item">
-                    <Link
-                      href="/commoditysoftware"
-                      className="nk-menu-link"
-                    >
+                    <Link href="/commoditysoftware" className="nk-menu-link">
                       <span className="nk-menu-text">Commodity Software</span>
                     </Link>
                   </li>
                 </ul>
               </li>
+
               <li className="nk-menu-item">
                 <Link href="/contact-us" className="nk-menu-link">
                   <span className="nk-menu-text">Contact Us</span>
                 </Link>
               </li>
             </ul>
+
+            {/* Auth Buttons */}
             <ul className="nk-menu-buttons flex-lg-row-reverse">
               {isLoggedIn ? (
                 isMobile ? (
@@ -193,7 +185,13 @@ function Header() {
                       </Link>
                     </li>
                     <li>
-                      <a className="nk-menu-link" onClick={handleLogout}>
+                      <a
+                        className="nk-menu-link"
+                        onClick={() => {
+                          localStorage.removeItem("authToken");
+                          setIsLoggedIn(false);
+                        }}
+                      >
                         <LogoutOutlined /> Logout
                       </a>
                     </li>
@@ -209,9 +207,9 @@ function Header() {
                 <li>
                   <button
                     className="btn btn-success text-white"
-                    onClick={showLoginModal} // Open the login modal on button click
+                    onClick={() => setIsLoginModalVisible(true)}
                   >
-                    Login
+                    Sign In
                   </button>
                 </li>
               )}
@@ -219,12 +217,14 @@ function Header() {
           </nav>
         </div>
       </div>
+
+      {/* Login Modal */}
       <Modal
-        visible={isLoginModalVisible}
-        onCancel={handleLoginCancel}
+        open={isLoginModalVisible}
+        onCancel={() => setIsLoginModalVisible(false)}
         footer={null}
       >
-        <Login /> 
+        <Login />
       </Modal>
     </div>
   );

@@ -6,7 +6,9 @@ function Footer() {
   return (
     <footer
       className="nk-footer pt-4 pt-lg-7 text-white"
-      style={{ background: "#121212" }}
+      style={{
+        background: "#014d40",
+      }}
     >
       <div className="section section-top-0">
         <div className="container">
@@ -16,18 +18,17 @@ function Footer() {
                 <Link href="/" className="logo-link mb-2">
                   <img
                     className="logo-img"
-                    src="/images/logo.png"
-                    alt="Elite Algo Trading"
+                    src="/images/global_logo3.png"
+                    alt="Global Algo Trading"
                     style={{ width: "200px" }}
                   />
                 </Link>
                 <p className="text-" style={{ marginTop: 20 }}>
-                  Algo trading we offer cutting-edge algorithmic trading
-                  solutions designed to empower investors with advanced tools
-                  and strategies to navigate today’s dynamic financial markets.
-                  Our AlgoTrading Service combines state-of-the-art technology
-                  with expert financial analysis to deliver superior results for
-                  our clients.
+                  Global Algo Trading offers advanced algorithmic trading
+                  solutions designed to empower investors with cutting-edge
+                  tools and strategies. Our service combines state-of-the-art
+                  technology with expert financial analysis to deliver superior
+                  results in today’s dynamic financial markets.
                 </p>
                 <h4 className="wgs-title overline-title text-white mt-5">
                   Follow Us
@@ -49,7 +50,7 @@ function Footer() {
                       <Link
                         className=" text-white"
                         style={{ color: "#C13584" }}
-                        href="https://www.instagram.com/algotradingelite?igsh=NmpyMWUxbHltNzlk"
+                        href="https://www.instagram.com/globalalgotrading/"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -59,7 +60,7 @@ function Footer() {
                     <li>
                       <Link
                         className=" text-white"
-                        href="https://www.facebook.com/share/1XE6niM7pj/"
+                        href="https://www.facebook.com/globalalgotrading"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -72,10 +73,7 @@ function Footer() {
             </div>
             <div className="col-xl-2 col-lg-2 col-sm-4 col-6">
               <div className="wgs">
-                <h4
-                  className="wgs-title overline-title mb-3"
-                  style={{ color: "white" }}
-                >
+                <h4 className="wgs-title overline-title text-white mb-3">
                   Company
                 </h4>
                 <ul className="list gy-2 list-link-base">
@@ -126,10 +124,10 @@ function Footer() {
                 <p>
                   <span className="font-bold">Email Id :</span>
                   <Link
-                    href="mailto:support@algotradingelite.com"
+                    href="mailto:support@globalalgotrading.com"
                     className="link link-info"
                   >
-                    support@algotradingelite.com
+                    support@globalalgotrading.com
                   </Link>
                 </p>
                 <p>
@@ -150,7 +148,7 @@ function Footer() {
             <div className="col-md text-center">
               <p className="mb-2 mb-md-0">
                 Copyright © 2024{" "}
-                <span className="text-info-1">Elite Algo Trading</span>. All
+                <span className="text-info-1">Global Algo Trading</span>. All
                 rights reserved.
               </p>
             </div>

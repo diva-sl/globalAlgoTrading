@@ -49,7 +49,7 @@
     let s = {
             root: "nk-header-main",
             base: "nk-header-menu",
-            toggle: "header-menu-toggle",
+            toggle: "header-menu-toggle", 
             toggleActive: "active",
             active: "header-menu-active",
             overlay: "header-menu-overlay",
